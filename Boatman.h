@@ -11,7 +11,7 @@ class Boatman : private Soldiers{
         int healthPerSoldier;
         int damagePerSoldier;
         int defencePerSoldier;
-        int amountofSoldiersPerUnit;
+        int amountOfSoldiersPerUnit;
         string unitName;
 
         void prepare();
@@ -24,6 +24,11 @@ class Boatman : private Soldiers{
         Soldiers * clonis();
         void engage();
         void disengage();
+
+        int getHealth();
+        int getDamage();
+        int getDefence();
+        int getAmt();
 
         friend class BoatmanFactory;
 };
