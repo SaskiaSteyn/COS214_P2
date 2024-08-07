@@ -2,16 +2,22 @@
 #define PRAC2_SOLDIERFACTORY_H
 
 #include "Soldiers.h"
+#include "InfantryFactory.h"
 
-class SoldierFactory{
+class SoldierFactory {
     private:
         Soldiers * soldiers;
 
     protected:
+
+        SoldierFactory(Soldiers *soldiers);
+
         virtual Soldiers * createUnit() = 0;
         virtual int calculateTotalHealthPerUnit() = 0;
         virtual int calculateTotalDamagePerUnit() = 0;
         virtual int calculateTotalDefencePerUnit() = 0;
+
+        friend class InfantryFactory;
 };
 
 #endif //PRAC2_SOLDIERFACTORY_H

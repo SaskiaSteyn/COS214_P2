@@ -1,7 +1,9 @@
 #ifndef PRAC2_BOATMANFACTORY_H
 #define PRAC2_BOATMANFACTORY_H
 
-#include "SoldierFactory.h"
+#include <iostream>
+
+
 
 using namespace std;
 

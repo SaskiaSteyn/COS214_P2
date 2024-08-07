@@ -1,12 +1,17 @@
 #ifndef PRAC2_INFANTRYFACTORY_H
 #define PRAC2_INFANTRYFACTORY_H
 
+#include <iostream>
+
 #include "SoldierFactory.h"
+#include "Infantry.h"
 
 using namespace std;
 
-class InfantryFactory : private SoldierFactory{
+class InfantryFactory : public SoldierFactory{
     public:
+
+        explicit InfantryFactory(Soldiers *soldiers);
         Soldiers * createUnit();
         int calculateTotalHealthPerUnit();
         int calculateTotalDamagePerUnit();

@@ -2,6 +2,7 @@
 #define PRAC2_INFANTRY_H
 
 #include "Soldiers.h"
+#include "InfantryFactory.h"
 #include <iostream>
 
 using namespace std;
@@ -19,12 +20,18 @@ class Infantry : private Soldiers{
         void retreat();
         void rest();
 
+
+
     public:
         Soldiers * clonis();
         void engage();
         void disengage();
 
 
+        int getHealth();
+        int getAmt();
+
+    friend class InfantryFactory;
 };
 
 #endif //PRAC2_INFANTRY_H

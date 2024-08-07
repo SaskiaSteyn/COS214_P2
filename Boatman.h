@@ -2,6 +2,7 @@
 #define PRAC2_BOATMAN_H
 
 #include "Soldiers.h"
+#include "BoatmanFactory.h"
 
 using namespace std;
 
@@ -23,6 +24,8 @@ class Boatman : private Soldiers{
         Soldiers * clonis();
         void engage();
         void disengage();
+
+        friend class BoatmanFactory;
 };
 
 #endif //PRAC2_BOATMAN_H

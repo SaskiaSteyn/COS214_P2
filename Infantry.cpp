@@ -20,6 +20,14 @@ void Infantry::rest() {
 
 }
 
+int Infantry::getHealth() {
+    return healthPerSoldier;
+}
+
+int Infantry::getAmt() {
+    return amountOfSoldiersPerUnit;
+}
+
 void Infantry::engage() {
     Soldiers::engage();
 }

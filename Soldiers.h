@@ -6,7 +6,7 @@
 using namespace std;
 
 
-class Soldiers : private Memento{
+class Soldiers {
     private:
         int healthPerSoldier;
         int damagePerSoldier;
@@ -21,6 +21,8 @@ class Soldiers : private Memento{
 
     public:
         virtual Soldiers * clonis() = 0;
+        virtual int getHealth() = 0;
+        virtual int getAmt() = 0;
 
     virtual void engage();
         void disengage();

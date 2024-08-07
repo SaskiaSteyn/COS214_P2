@@ -2,6 +2,8 @@
 #define PRAC2_SHIELDBEARER_H
 
 #include "Soldiers.h"
+#include "ShieldBearerFactory.h"
+
 #include <iostream>
 
 using namespace std;
@@ -24,6 +26,7 @@ class ShieldBearer : private Soldiers{
         void engage();
         void disengage();
 
+        friend class ShieldBearerFactory;
 };
 
 #endif //PRAC2_SHIELDBEARER_H
