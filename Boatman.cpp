@@ -29,4 +29,20 @@ void Boatman::disengage() {
     Soldiers::disengage();
 }
 
+int Boatman::getHealth() {
+    return healthPerSoldier;
+}
+
+int Boatman::getAmt() {
+    return amountOfSoldiersPerUnit;
+}
+
+int Boatman::getDamage() {
+    return damagePerSoldier;
+}
+
+int Boatman::getDefence() {
+    return defencePerSoldier;
+}
+
 

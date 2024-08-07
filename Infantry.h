@@ -29,6 +29,8 @@ class Infantry : private Soldiers{
 
 
         int getHealth();
+        int getDamage();
+        int getDefence();
         int getAmt();
 
     friend class InfantryFactory;

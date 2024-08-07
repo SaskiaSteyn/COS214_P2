@@ -35,3 +35,11 @@ void Infantry::engage() {
 void Infantry::disengage() {
     Soldiers::disengage();
 }
+
+int Infantry::getDamage() {
+    return damagePerSoldier;
+}
+
+int Infantry::getDefence() {
+    return defencePerSoldier;
+}

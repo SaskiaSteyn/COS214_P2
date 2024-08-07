@@ -26,6 +26,11 @@ class ShieldBearer : private Soldiers{
         void engage();
         void disengage();
 
+        int getHealth();
+        int getDamage();
+        int getDefence();
+        int getAmt();
+
         friend class ShieldBearerFactory;
 };
 
