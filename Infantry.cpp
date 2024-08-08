@@ -1,5 +1,7 @@
 #include "Infantry.h"
 
+Infantry::Infantry(int health, int damage, int defence, int amt, string name) : Soldiers(health, damage, defence, amt, name) {}
+
 Soldiers *Infantry::clonis() {
     return nullptr;
 }

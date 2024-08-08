@@ -1,5 +1,13 @@
 #include "Soldiers.h"
 
+Soldiers::Soldiers(int health, int damage, int defence, int amt, string name) {
+    this->healthPerSoldier = health;
+    this->damagePerSoldier = damage;
+    this->defencePerSoldier = defence;
+    this->amountOfSoldiersPerUnit = amt;
+    this->unitName = name;
+}
+
 void Soldiers::prepare() {
 
 }

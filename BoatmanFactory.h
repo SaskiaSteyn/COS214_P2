@@ -4,16 +4,18 @@
 
 #include <iostream>
 
-
+#include "SoldierFactory.h"
+#include "Boatman.h"
 
 using namespace std;
 
-class BoatmanFactory : private SoldierFactory{
-public:
-    Soldiers * createUnit();
-    int calculateTotalHealthPerUnit();
-    int calculateTotalDamagePerUnit();
-    int calculateTotalDefencePerUnit();
+class BoatmanFactory : public SoldierFactory {
+    public:
+        BoatmanFactory(Soldiers* soldiers);
+        Soldiers * createUnit();
+        int calculateTotalHealthPerUnit();
+        int calculateTotalDamagePerUnit();
+        int calculateTotalDefencePerUnit();
 };
 
 #endif //PRAC2_BOATMANFACTORY_H
