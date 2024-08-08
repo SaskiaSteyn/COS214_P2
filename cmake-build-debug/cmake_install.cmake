@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/njjvr/OneDrive/Documents/COS214/Practical 2/COS214_P2
+# Install script for directory: C:/Users/njjvr/OneDrive/Documents/COS214/Prac2/COS214_P2
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/njjvr/OneDrive/Documents/COS214/Practical 2/COS214_P2/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/njjvr/OneDrive/Documents/COS214/Prac2/COS214_P2/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

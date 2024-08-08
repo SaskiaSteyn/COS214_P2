@@ -1,5 +1,7 @@
 #include "ShieldBearer.h"
 
+ShieldBearer::ShieldBearer(int health, int damage, int defence, int amt, string name) : Soldiers(health, damage, defence, amt, name) {}
+
 Soldiers *ShieldBearer::clonis() {
     return nullptr;
 }

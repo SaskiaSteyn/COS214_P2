@@ -23,17 +23,20 @@ class Infantry : public Soldiers{
 
 
     public:
+        Infantry(int health, int damage, int defence, int amt, string name);
+
         Soldiers * clonis();
-        void engage();
-        void disengage();
-
-
         int getHealth();
         int getDamage();
         int getDefence();
         int getAmt();
 
-//    friend class InfantryFactory;
+
+        void engage();
+        void disengage();
+
+        Memento * militusMemento();
+        void vivificaMemento(Memento * mem);
 };
 
 #endif //PRAC2_INFANTRY_H

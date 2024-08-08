@@ -21,16 +21,20 @@ class Boatman : private Soldiers{
 
 
     public:
-        Soldiers * clonis();
-        void engage();
-        void disengage();
+        Boatman(int health, int damage, int defence, int amt, string name);
 
+        Soldiers * clonis();
         int getHealth();
         int getDamage();
         int getDefence();
         int getAmt();
 
-        friend class BoatmanFactory;
+
+        void engage();
+        void disengage();
+
+        Memento * militusMemento();
+        void vivificaMemento(Memento * mem);
 };
 
 #endif //PRAC2_BOATMAN_H

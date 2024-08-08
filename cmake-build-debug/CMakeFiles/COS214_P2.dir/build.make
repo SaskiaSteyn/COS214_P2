@@ -52,10 +52,10 @@ RM = "C:\Program Files\JetBrains\CLion 2024.1.4\bin\cmake\win\x64\bin\cmake.exe"
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2"
+CMAKE_SOURCE_DIR = C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\cmake-build-debug"
+CMAKE_BINARY_DIR = C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/COS214_P2.dir/depend.make
@@ -70,168 +70,168 @@ include CMakeFiles/COS214_P2.dir/flags.make
 
 CMakeFiles/COS214_P2.dir/Boatman.cpp.obj: CMakeFiles/COS214_P2.dir/flags.make
 CMakeFiles/COS214_P2.dir/Boatman.cpp.obj: CMakeFiles/COS214_P2.dir/includes_CXX.rsp
-CMakeFiles/COS214_P2.dir/Boatman.cpp.obj: C:/Users/njjvr/OneDrive/Documents/COS214/Practical\ 2/COS214_P2/Boatman.cpp
+CMakeFiles/COS214_P2.dir/Boatman.cpp.obj: C:/Users/njjvr/OneDrive/Documents/COS214/Prac2/COS214_P2/Boatman.cpp
 CMakeFiles/COS214_P2.dir/Boatman.cpp.obj: CMakeFiles/COS214_P2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/COS214_P2.dir/Boatman.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/COS214_P2.dir/Boatman.cpp.obj -MF CMakeFiles\COS214_P2.dir\Boatman.cpp.obj.d -o CMakeFiles\COS214_P2.dir\Boatman.cpp.obj -c "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\Boatman.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/COS214_P2.dir/Boatman.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/COS214_P2.dir/Boatman.cpp.obj -MF CMakeFiles\COS214_P2.dir\Boatman.cpp.obj.d -o CMakeFiles\COS214_P2.dir\Boatman.cpp.obj -c C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\Boatman.cpp
 
 CMakeFiles/COS214_P2.dir/Boatman.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/COS214_P2.dir/Boatman.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\Boatman.cpp" > CMakeFiles\COS214_P2.dir\Boatman.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\Boatman.cpp > CMakeFiles\COS214_P2.dir\Boatman.cpp.i
 
 CMakeFiles/COS214_P2.dir/Boatman.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/COS214_P2.dir/Boatman.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\Boatman.cpp" -o CMakeFiles\COS214_P2.dir\Boatman.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\Boatman.cpp -o CMakeFiles\COS214_P2.dir\Boatman.cpp.s
 
 CMakeFiles/COS214_P2.dir/BoatmanFactory.cpp.obj: CMakeFiles/COS214_P2.dir/flags.make
 CMakeFiles/COS214_P2.dir/BoatmanFactory.cpp.obj: CMakeFiles/COS214_P2.dir/includes_CXX.rsp
-CMakeFiles/COS214_P2.dir/BoatmanFactory.cpp.obj: C:/Users/njjvr/OneDrive/Documents/COS214/Practical\ 2/COS214_P2/BoatmanFactory.cpp
+CMakeFiles/COS214_P2.dir/BoatmanFactory.cpp.obj: C:/Users/njjvr/OneDrive/Documents/COS214/Prac2/COS214_P2/BoatmanFactory.cpp
 CMakeFiles/COS214_P2.dir/BoatmanFactory.cpp.obj: CMakeFiles/COS214_P2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/COS214_P2.dir/BoatmanFactory.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/COS214_P2.dir/BoatmanFactory.cpp.obj -MF CMakeFiles\COS214_P2.dir\BoatmanFactory.cpp.obj.d -o CMakeFiles\COS214_P2.dir\BoatmanFactory.cpp.obj -c "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\BoatmanFactory.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/COS214_P2.dir/BoatmanFactory.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/COS214_P2.dir/BoatmanFactory.cpp.obj -MF CMakeFiles\COS214_P2.dir\BoatmanFactory.cpp.obj.d -o CMakeFiles\COS214_P2.dir\BoatmanFactory.cpp.obj -c C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\BoatmanFactory.cpp
 
 CMakeFiles/COS214_P2.dir/BoatmanFactory.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/COS214_P2.dir/BoatmanFactory.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\BoatmanFactory.cpp" > CMakeFiles\COS214_P2.dir\BoatmanFactory.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\BoatmanFactory.cpp > CMakeFiles\COS214_P2.dir\BoatmanFactory.cpp.i
 
 CMakeFiles/COS214_P2.dir/BoatmanFactory.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/COS214_P2.dir/BoatmanFactory.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\BoatmanFactory.cpp" -o CMakeFiles\COS214_P2.dir\BoatmanFactory.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\BoatmanFactory.cpp -o CMakeFiles\COS214_P2.dir\BoatmanFactory.cpp.s
 
 CMakeFiles/COS214_P2.dir/Caretaker.cpp.obj: CMakeFiles/COS214_P2.dir/flags.make
 CMakeFiles/COS214_P2.dir/Caretaker.cpp.obj: CMakeFiles/COS214_P2.dir/includes_CXX.rsp
-CMakeFiles/COS214_P2.dir/Caretaker.cpp.obj: C:/Users/njjvr/OneDrive/Documents/COS214/Practical\ 2/COS214_P2/Caretaker.cpp
+CMakeFiles/COS214_P2.dir/Caretaker.cpp.obj: C:/Users/njjvr/OneDrive/Documents/COS214/Prac2/COS214_P2/Caretaker.cpp
 CMakeFiles/COS214_P2.dir/Caretaker.cpp.obj: CMakeFiles/COS214_P2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/COS214_P2.dir/Caretaker.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/COS214_P2.dir/Caretaker.cpp.obj -MF CMakeFiles\COS214_P2.dir\Caretaker.cpp.obj.d -o CMakeFiles\COS214_P2.dir\Caretaker.cpp.obj -c "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\Caretaker.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/COS214_P2.dir/Caretaker.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/COS214_P2.dir/Caretaker.cpp.obj -MF CMakeFiles\COS214_P2.dir\Caretaker.cpp.obj.d -o CMakeFiles\COS214_P2.dir\Caretaker.cpp.obj -c C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\Caretaker.cpp
 
 CMakeFiles/COS214_P2.dir/Caretaker.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/COS214_P2.dir/Caretaker.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\Caretaker.cpp" > CMakeFiles\COS214_P2.dir\Caretaker.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\Caretaker.cpp > CMakeFiles\COS214_P2.dir\Caretaker.cpp.i
 
 CMakeFiles/COS214_P2.dir/Caretaker.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/COS214_P2.dir/Caretaker.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\Caretaker.cpp" -o CMakeFiles\COS214_P2.dir\Caretaker.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\Caretaker.cpp -o CMakeFiles\COS214_P2.dir\Caretaker.cpp.s
 
 CMakeFiles/COS214_P2.dir/Infantry.cpp.obj: CMakeFiles/COS214_P2.dir/flags.make
 CMakeFiles/COS214_P2.dir/Infantry.cpp.obj: CMakeFiles/COS214_P2.dir/includes_CXX.rsp
-CMakeFiles/COS214_P2.dir/Infantry.cpp.obj: C:/Users/njjvr/OneDrive/Documents/COS214/Practical\ 2/COS214_P2/Infantry.cpp
+CMakeFiles/COS214_P2.dir/Infantry.cpp.obj: C:/Users/njjvr/OneDrive/Documents/COS214/Prac2/COS214_P2/Infantry.cpp
 CMakeFiles/COS214_P2.dir/Infantry.cpp.obj: CMakeFiles/COS214_P2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/COS214_P2.dir/Infantry.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/COS214_P2.dir/Infantry.cpp.obj -MF CMakeFiles\COS214_P2.dir\Infantry.cpp.obj.d -o CMakeFiles\COS214_P2.dir\Infantry.cpp.obj -c "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\Infantry.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/COS214_P2.dir/Infantry.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/COS214_P2.dir/Infantry.cpp.obj -MF CMakeFiles\COS214_P2.dir\Infantry.cpp.obj.d -o CMakeFiles\COS214_P2.dir\Infantry.cpp.obj -c C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\Infantry.cpp
 
 CMakeFiles/COS214_P2.dir/Infantry.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/COS214_P2.dir/Infantry.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\Infantry.cpp" > CMakeFiles\COS214_P2.dir\Infantry.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\Infantry.cpp > CMakeFiles\COS214_P2.dir\Infantry.cpp.i
 
 CMakeFiles/COS214_P2.dir/Infantry.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/COS214_P2.dir/Infantry.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\Infantry.cpp" -o CMakeFiles\COS214_P2.dir\Infantry.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\Infantry.cpp -o CMakeFiles\COS214_P2.dir\Infantry.cpp.s
 
 CMakeFiles/COS214_P2.dir/InfantryFactory.cpp.obj: CMakeFiles/COS214_P2.dir/flags.make
 CMakeFiles/COS214_P2.dir/InfantryFactory.cpp.obj: CMakeFiles/COS214_P2.dir/includes_CXX.rsp
-CMakeFiles/COS214_P2.dir/InfantryFactory.cpp.obj: C:/Users/njjvr/OneDrive/Documents/COS214/Practical\ 2/COS214_P2/InfantryFactory.cpp
+CMakeFiles/COS214_P2.dir/InfantryFactory.cpp.obj: C:/Users/njjvr/OneDrive/Documents/COS214/Prac2/COS214_P2/InfantryFactory.cpp
 CMakeFiles/COS214_P2.dir/InfantryFactory.cpp.obj: CMakeFiles/COS214_P2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/COS214_P2.dir/InfantryFactory.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/COS214_P2.dir/InfantryFactory.cpp.obj -MF CMakeFiles\COS214_P2.dir\InfantryFactory.cpp.obj.d -o CMakeFiles\COS214_P2.dir\InfantryFactory.cpp.obj -c "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\InfantryFactory.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/COS214_P2.dir/InfantryFactory.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/COS214_P2.dir/InfantryFactory.cpp.obj -MF CMakeFiles\COS214_P2.dir\InfantryFactory.cpp.obj.d -o CMakeFiles\COS214_P2.dir\InfantryFactory.cpp.obj -c C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\InfantryFactory.cpp
 
 CMakeFiles/COS214_P2.dir/InfantryFactory.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/COS214_P2.dir/InfantryFactory.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\InfantryFactory.cpp" > CMakeFiles\COS214_P2.dir\InfantryFactory.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\InfantryFactory.cpp > CMakeFiles\COS214_P2.dir\InfantryFactory.cpp.i
 
 CMakeFiles/COS214_P2.dir/InfantryFactory.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/COS214_P2.dir/InfantryFactory.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\InfantryFactory.cpp" -o CMakeFiles\COS214_P2.dir\InfantryFactory.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\InfantryFactory.cpp -o CMakeFiles\COS214_P2.dir\InfantryFactory.cpp.s
 
 CMakeFiles/COS214_P2.dir/Memento.cpp.obj: CMakeFiles/COS214_P2.dir/flags.make
 CMakeFiles/COS214_P2.dir/Memento.cpp.obj: CMakeFiles/COS214_P2.dir/includes_CXX.rsp
-CMakeFiles/COS214_P2.dir/Memento.cpp.obj: C:/Users/njjvr/OneDrive/Documents/COS214/Practical\ 2/COS214_P2/Memento.cpp
+CMakeFiles/COS214_P2.dir/Memento.cpp.obj: C:/Users/njjvr/OneDrive/Documents/COS214/Prac2/COS214_P2/Memento.cpp
 CMakeFiles/COS214_P2.dir/Memento.cpp.obj: CMakeFiles/COS214_P2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/COS214_P2.dir/Memento.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/COS214_P2.dir/Memento.cpp.obj -MF CMakeFiles\COS214_P2.dir\Memento.cpp.obj.d -o CMakeFiles\COS214_P2.dir\Memento.cpp.obj -c "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\Memento.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/COS214_P2.dir/Memento.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/COS214_P2.dir/Memento.cpp.obj -MF CMakeFiles\COS214_P2.dir\Memento.cpp.obj.d -o CMakeFiles\COS214_P2.dir\Memento.cpp.obj -c C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\Memento.cpp
 
 CMakeFiles/COS214_P2.dir/Memento.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/COS214_P2.dir/Memento.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\Memento.cpp" > CMakeFiles\COS214_P2.dir\Memento.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\Memento.cpp > CMakeFiles\COS214_P2.dir\Memento.cpp.i
 
 CMakeFiles/COS214_P2.dir/Memento.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/COS214_P2.dir/Memento.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\Memento.cpp" -o CMakeFiles\COS214_P2.dir\Memento.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\Memento.cpp -o CMakeFiles\COS214_P2.dir\Memento.cpp.s
 
 CMakeFiles/COS214_P2.dir/ShieldBearer.cpp.obj: CMakeFiles/COS214_P2.dir/flags.make
 CMakeFiles/COS214_P2.dir/ShieldBearer.cpp.obj: CMakeFiles/COS214_P2.dir/includes_CXX.rsp
-CMakeFiles/COS214_P2.dir/ShieldBearer.cpp.obj: C:/Users/njjvr/OneDrive/Documents/COS214/Practical\ 2/COS214_P2/ShieldBearer.cpp
+CMakeFiles/COS214_P2.dir/ShieldBearer.cpp.obj: C:/Users/njjvr/OneDrive/Documents/COS214/Prac2/COS214_P2/ShieldBearer.cpp
 CMakeFiles/COS214_P2.dir/ShieldBearer.cpp.obj: CMakeFiles/COS214_P2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/COS214_P2.dir/ShieldBearer.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/COS214_P2.dir/ShieldBearer.cpp.obj -MF CMakeFiles\COS214_P2.dir\ShieldBearer.cpp.obj.d -o CMakeFiles\COS214_P2.dir\ShieldBearer.cpp.obj -c "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\ShieldBearer.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/COS214_P2.dir/ShieldBearer.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/COS214_P2.dir/ShieldBearer.cpp.obj -MF CMakeFiles\COS214_P2.dir\ShieldBearer.cpp.obj.d -o CMakeFiles\COS214_P2.dir\ShieldBearer.cpp.obj -c C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\ShieldBearer.cpp
 
 CMakeFiles/COS214_P2.dir/ShieldBearer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/COS214_P2.dir/ShieldBearer.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\ShieldBearer.cpp" > CMakeFiles\COS214_P2.dir\ShieldBearer.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\ShieldBearer.cpp > CMakeFiles\COS214_P2.dir\ShieldBearer.cpp.i
 
 CMakeFiles/COS214_P2.dir/ShieldBearer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/COS214_P2.dir/ShieldBearer.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\ShieldBearer.cpp" -o CMakeFiles\COS214_P2.dir\ShieldBearer.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\ShieldBearer.cpp -o CMakeFiles\COS214_P2.dir\ShieldBearer.cpp.s
 
 CMakeFiles/COS214_P2.dir/ShieldBearerFactory.cpp.obj: CMakeFiles/COS214_P2.dir/flags.make
 CMakeFiles/COS214_P2.dir/ShieldBearerFactory.cpp.obj: CMakeFiles/COS214_P2.dir/includes_CXX.rsp
-CMakeFiles/COS214_P2.dir/ShieldBearerFactory.cpp.obj: C:/Users/njjvr/OneDrive/Documents/COS214/Practical\ 2/COS214_P2/ShieldBearerFactory.cpp
+CMakeFiles/COS214_P2.dir/ShieldBearerFactory.cpp.obj: C:/Users/njjvr/OneDrive/Documents/COS214/Prac2/COS214_P2/ShieldBearerFactory.cpp
 CMakeFiles/COS214_P2.dir/ShieldBearerFactory.cpp.obj: CMakeFiles/COS214_P2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/COS214_P2.dir/ShieldBearerFactory.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/COS214_P2.dir/ShieldBearerFactory.cpp.obj -MF CMakeFiles\COS214_P2.dir\ShieldBearerFactory.cpp.obj.d -o CMakeFiles\COS214_P2.dir\ShieldBearerFactory.cpp.obj -c "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\ShieldBearerFactory.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/COS214_P2.dir/ShieldBearerFactory.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/COS214_P2.dir/ShieldBearerFactory.cpp.obj -MF CMakeFiles\COS214_P2.dir\ShieldBearerFactory.cpp.obj.d -o CMakeFiles\COS214_P2.dir\ShieldBearerFactory.cpp.obj -c C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\ShieldBearerFactory.cpp
 
 CMakeFiles/COS214_P2.dir/ShieldBearerFactory.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/COS214_P2.dir/ShieldBearerFactory.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\ShieldBearerFactory.cpp" > CMakeFiles\COS214_P2.dir\ShieldBearerFactory.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\ShieldBearerFactory.cpp > CMakeFiles\COS214_P2.dir\ShieldBearerFactory.cpp.i
 
 CMakeFiles/COS214_P2.dir/ShieldBearerFactory.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/COS214_P2.dir/ShieldBearerFactory.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\ShieldBearerFactory.cpp" -o CMakeFiles\COS214_P2.dir\ShieldBearerFactory.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\ShieldBearerFactory.cpp -o CMakeFiles\COS214_P2.dir\ShieldBearerFactory.cpp.s
 
 CMakeFiles/COS214_P2.dir/SoldierFactory.cpp.obj: CMakeFiles/COS214_P2.dir/flags.make
 CMakeFiles/COS214_P2.dir/SoldierFactory.cpp.obj: CMakeFiles/COS214_P2.dir/includes_CXX.rsp
-CMakeFiles/COS214_P2.dir/SoldierFactory.cpp.obj: C:/Users/njjvr/OneDrive/Documents/COS214/Practical\ 2/COS214_P2/SoldierFactory.cpp
+CMakeFiles/COS214_P2.dir/SoldierFactory.cpp.obj: C:/Users/njjvr/OneDrive/Documents/COS214/Prac2/COS214_P2/SoldierFactory.cpp
 CMakeFiles/COS214_P2.dir/SoldierFactory.cpp.obj: CMakeFiles/COS214_P2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/COS214_P2.dir/SoldierFactory.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/COS214_P2.dir/SoldierFactory.cpp.obj -MF CMakeFiles\COS214_P2.dir\SoldierFactory.cpp.obj.d -o CMakeFiles\COS214_P2.dir\SoldierFactory.cpp.obj -c "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\SoldierFactory.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/COS214_P2.dir/SoldierFactory.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/COS214_P2.dir/SoldierFactory.cpp.obj -MF CMakeFiles\COS214_P2.dir\SoldierFactory.cpp.obj.d -o CMakeFiles\COS214_P2.dir\SoldierFactory.cpp.obj -c C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\SoldierFactory.cpp
 
 CMakeFiles/COS214_P2.dir/SoldierFactory.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/COS214_P2.dir/SoldierFactory.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\SoldierFactory.cpp" > CMakeFiles\COS214_P2.dir\SoldierFactory.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\SoldierFactory.cpp > CMakeFiles\COS214_P2.dir\SoldierFactory.cpp.i
 
 CMakeFiles/COS214_P2.dir/SoldierFactory.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/COS214_P2.dir/SoldierFactory.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\SoldierFactory.cpp" -o CMakeFiles\COS214_P2.dir\SoldierFactory.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\SoldierFactory.cpp -o CMakeFiles\COS214_P2.dir\SoldierFactory.cpp.s
 
 CMakeFiles/COS214_P2.dir/Soldiers.cpp.obj: CMakeFiles/COS214_P2.dir/flags.make
 CMakeFiles/COS214_P2.dir/Soldiers.cpp.obj: CMakeFiles/COS214_P2.dir/includes_CXX.rsp
-CMakeFiles/COS214_P2.dir/Soldiers.cpp.obj: C:/Users/njjvr/OneDrive/Documents/COS214/Practical\ 2/COS214_P2/Soldiers.cpp
+CMakeFiles/COS214_P2.dir/Soldiers.cpp.obj: C:/Users/njjvr/OneDrive/Documents/COS214/Prac2/COS214_P2/Soldiers.cpp
 CMakeFiles/COS214_P2.dir/Soldiers.cpp.obj: CMakeFiles/COS214_P2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/COS214_P2.dir/Soldiers.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/COS214_P2.dir/Soldiers.cpp.obj -MF CMakeFiles\COS214_P2.dir\Soldiers.cpp.obj.d -o CMakeFiles\COS214_P2.dir\Soldiers.cpp.obj -c "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\Soldiers.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/COS214_P2.dir/Soldiers.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/COS214_P2.dir/Soldiers.cpp.obj -MF CMakeFiles\COS214_P2.dir\Soldiers.cpp.obj.d -o CMakeFiles\COS214_P2.dir\Soldiers.cpp.obj -c C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\Soldiers.cpp
 
 CMakeFiles/COS214_P2.dir/Soldiers.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/COS214_P2.dir/Soldiers.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\Soldiers.cpp" > CMakeFiles\COS214_P2.dir\Soldiers.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\Soldiers.cpp > CMakeFiles\COS214_P2.dir\Soldiers.cpp.i
 
 CMakeFiles/COS214_P2.dir/Soldiers.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/COS214_P2.dir/Soldiers.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\Soldiers.cpp" -o CMakeFiles\COS214_P2.dir\Soldiers.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\Soldiers.cpp -o CMakeFiles\COS214_P2.dir\Soldiers.cpp.s
 
 CMakeFiles/COS214_P2.dir/main.cpp.obj: CMakeFiles/COS214_P2.dir/flags.make
 CMakeFiles/COS214_P2.dir/main.cpp.obj: CMakeFiles/COS214_P2.dir/includes_CXX.rsp
-CMakeFiles/COS214_P2.dir/main.cpp.obj: C:/Users/njjvr/OneDrive/Documents/COS214/Practical\ 2/COS214_P2/main.cpp
+CMakeFiles/COS214_P2.dir/main.cpp.obj: C:/Users/njjvr/OneDrive/Documents/COS214/Prac2/COS214_P2/main.cpp
 CMakeFiles/COS214_P2.dir/main.cpp.obj: CMakeFiles/COS214_P2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/COS214_P2.dir/main.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/COS214_P2.dir/main.cpp.obj -MF CMakeFiles\COS214_P2.dir\main.cpp.obj.d -o CMakeFiles\COS214_P2.dir\main.cpp.obj -c "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\main.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/COS214_P2.dir/main.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/COS214_P2.dir/main.cpp.obj -MF CMakeFiles\COS214_P2.dir\main.cpp.obj.d -o CMakeFiles\COS214_P2.dir\main.cpp.obj -c C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\main.cpp
 
 CMakeFiles/COS214_P2.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/COS214_P2.dir/main.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\main.cpp" > CMakeFiles\COS214_P2.dir\main.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\main.cpp > CMakeFiles\COS214_P2.dir\main.cpp.i
 
 CMakeFiles/COS214_P2.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/COS214_P2.dir/main.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\main.cpp" -o CMakeFiles\COS214_P2.dir\main.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\main.cpp -o CMakeFiles\COS214_P2.dir\main.cpp.s
 
 # Object files for target COS214_P2
 COS214_P2_OBJECTS = \
@@ -265,7 +265,7 @@ COS214_P2.exe: CMakeFiles/COS214_P2.dir/build.make
 COS214_P2.exe: CMakeFiles/COS214_P2.dir/linkLibs.rsp
 COS214_P2.exe: CMakeFiles/COS214_P2.dir/objects1.rsp
 COS214_P2.exe: CMakeFiles/COS214_P2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable COS214_P2.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable COS214_P2.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\COS214_P2.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -277,6 +277,6 @@ CMakeFiles/COS214_P2.dir/clean:
 .PHONY : CMakeFiles/COS214_P2.dir/clean
 
 CMakeFiles/COS214_P2.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2" "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2" "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\cmake-build-debug" "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\cmake-build-debug" "C:\Users\njjvr\OneDrive\Documents\COS214\Practical 2\COS214_P2\cmake-build-debug\CMakeFiles\COS214_P2.dir\DependInfo.cmake" "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2 C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2 C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\cmake-build-debug C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\cmake-build-debug C:\Users\njjvr\OneDrive\Documents\COS214\Prac2\COS214_P2\cmake-build-debug\CMakeFiles\COS214_P2.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/COS214_P2.dir/depend
 

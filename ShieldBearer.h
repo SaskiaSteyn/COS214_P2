@@ -22,16 +22,20 @@ class ShieldBearer : private Soldiers{
         void rest();
 
     public:
-        Soldiers * clonis();
-        void engage();
-        void disengage();
+        ShieldBearer(int health, int damage, int defence, int amt, string name);
 
+        Soldiers * clonis();
         int getHealth();
         int getDamage();
         int getDefence();
         int getAmt();
 
-        friend class ShieldBearerFactory;
+
+        void engage();
+        void disengage();
+
+        Memento * militusMemento();
+        void vivificaMemento(Memento * mem);
 };
 
 #endif //PRAC2_SHIELDBEARER_H

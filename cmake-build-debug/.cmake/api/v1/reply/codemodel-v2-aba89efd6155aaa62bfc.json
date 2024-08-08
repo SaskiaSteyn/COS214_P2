@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "COS214_P2::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-COS214_P2-Debug-e62d05a0bb1e81d54a11.json",
+					"jsonFile" : "target-COS214_P2-Debug-1174d88989bebd0587fa.json",
 					"name" : "COS214_P2",
 					"projectIndex" : 0
 				}
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/njjvr/OneDrive/Documents/COS214/Practical 2/COS214_P2/cmake-build-debug",
-		"source" : "C:/Users/njjvr/OneDrive/Documents/COS214/Practical 2/COS214_P2"
+		"build" : "C:/Users/njjvr/OneDrive/Documents/COS214/Prac2/COS214_P2/cmake-build-debug",
+		"source" : "C:/Users/njjvr/OneDrive/Documents/COS214/Prac2/COS214_P2"
 	},
 	"version" : 
 	{

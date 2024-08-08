@@ -1,6 +1,8 @@
 
 #include "Boatman.h"
 
+Boatman::Boatman(int health, int damage, int defence, int amt, string name) : Soldiers(health, damage, defence, amt, name) {}
+
 Soldiers *Boatman::clonis() {
     return nullptr;
 }

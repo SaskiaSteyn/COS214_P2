@@ -3,9 +3,9 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
-  <component name="CMakePresetLoader"><![CDATA[{
-  "useNewFormat": true
-}]]></component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
   <component name="CMakeReloadState">
     <option name="reloaded" value="true" />
   </component>
@@ -21,17 +21,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9b60e47-bf14-4b7f-94c1-702077d95305" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/BoatmanFactory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/BoatmanFactory.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BoatmanFactory.h" beforeDir="false" afterPath="$PROJECT_DIR$/BoatmanFactory.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Boatman.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Boatman.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Boatman.h" beforeDir="false" afterPath="$PROJECT_DIR$/Boatman.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infantry.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Infantry.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infantry.h" beforeDir="false" afterPath="$PROJECT_DIR$/Infantry.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InfantryFactory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/InfantryFactory.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InfantryFactory.h" beforeDir="false" afterPath="$PROJECT_DIR$/InfantryFactory.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShieldBearerFactory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ShieldBearerFactory.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShieldBearerFactory.h" beforeDir="false" afterPath="$PROJECT_DIR$/ShieldBearerFactory.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoldierFactory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SoldierFactory.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoldierFactory.h" beforeDir="false" afterPath="$PROJECT_DIR$/SoldierFactory.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShieldBearer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ShieldBearer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShieldBearer.h" beforeDir="false" afterPath="$PROJECT_DIR$/ShieldBearer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Soldiers.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Soldiers.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Soldiers.h" beforeDir="false" afterPath="$PROJECT_DIR$/Soldiers.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +58,7 @@
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "last_opened_file_path": "C:/Users/njjvr/OneDrive/Documents/COS214/Practical 2/COS214_P2/CMakeLists.txt",
+    "last_opened_file_path": "C:/Users/njjvr/OneDrive/Documents/COS214/Prac2/COS214_P2",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -70,12 +68,12 @@
   }
 }]]></component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="COS214_P2" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="COS214_P2" TARGET_NAME="COS214_P2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="COS214_P2" RUN_TARGET_NAME="COS214_P2">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="COS214_P2" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="COS214_P2" TARGET_NAME="COS214_P2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="COS214_P2" RUN_TARGET_NAME="COS214_P2">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -91,6 +89,7 @@
       <updated>1723036508389</updated>
       <workItem from="1723036509629" duration="703000" />
       <workItem from="1723097336382" duration="5674000" />
+      <workItem from="1723108177845" duration="508000" />
     </task>
     <servers />
   </component>
