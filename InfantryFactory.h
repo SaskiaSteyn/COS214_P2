@@ -8,10 +8,9 @@
 
 using namespace std;
 
-class InfantryFactory : public SoldierFactory{
+class InfantryFactory : public SoldierFactory {
     public:
-
-        explicit InfantryFactory(Soldiers *soldiers);
+        InfantryFactory(Soldiers* soldiers);
         Soldiers * createUnit();
         int calculateTotalHealthPerUnit();
         int calculateTotalDamagePerUnit();

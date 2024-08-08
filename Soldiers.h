@@ -21,8 +21,6 @@ class Soldiers {
 
     public:
         virtual Soldiers * clonis() = 0;
-        virtual int getHealth() = 0;
-        virtual int getAmt() = 0;
 
     virtual void engage();
         void disengage();
@@ -30,6 +28,10 @@ class Soldiers {
         Memento * militusMemento();
         void vivificaMemento(Memento * mem);
 
+    virtual int getHealth() = 0;
+    virtual int getDamage() = 0;
+    virtual int getDefence() = 0;
+    virtual int getAmt() = 0;
 };
 
 #endif //PRAC2_SOLDIERS_H

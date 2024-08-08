@@ -2,7 +2,6 @@
 #define PRAC2_SOLDIERFACTORY_H
 
 #include "Soldiers.h"
-#include "InfantryFactory.h"
 
 class SoldierFactory {
     private:
@@ -17,7 +16,7 @@ class SoldierFactory {
         virtual int calculateTotalDamagePerUnit() = 0;
         virtual int calculateTotalDefencePerUnit() = 0;
 
-        friend class InfantryFactory;
+        Soldiers* getSoldier();
 };
 
 #endif //PRAC2_SOLDIERFACTORY_H

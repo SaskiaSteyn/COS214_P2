@@ -7,7 +7,7 @@
 
 using namespace std;
 
-class Infantry : private Soldiers{
+class Infantry : public Soldiers{
     private:
         int healthPerSoldier;
         int damagePerSoldier;
@@ -33,7 +33,7 @@ class Infantry : private Soldiers{
         int getDefence();
         int getAmt();
 
-    friend class InfantryFactory;
+//    friend class InfantryFactory;
 };
 
 #endif //PRAC2_INFANTRY_H

@@ -1,18 +1,19 @@
 #include "BoatmanFactory.h"
 
+BoatmanFactory::BoatmanFactory(Soldiers *soldiers) : SoldierFactory(soldiers) {}
+
 Soldiers *BoatmanFactory::createUnit() {
-    return nullptr;
+    return getSoldier()->clonis();
 }
 
 int BoatmanFactory::calculateTotalHealthPerUnit() {
-    return 0;
+    return getSoldier()->getHealth() * getSoldier()->getAmt();
 }
 
 int BoatmanFactory::calculateTotalDamagePerUnit() {
-    return 0;
+    return getSoldier()->getDamage() * getSoldier()->getAmt();
 }
 
 int BoatmanFactory::calculateTotalDefencePerUnit() {
-    return 0;
+    return getSoldier()->getDefence() * getSoldier()->getAmt();
 }
-
