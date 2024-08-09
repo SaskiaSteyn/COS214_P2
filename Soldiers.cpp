@@ -6,31 +6,35 @@ Soldiers::Soldiers(int health, int damage, int defence, int amt, string name) {
     this->defencePerSoldier = defence;
     this->amountOfSoldiersPerUnit = amt;
     this->unitName = name;
+    this->enemy = nullptr;
 }
 
-void Soldiers::prepare() {
+void Soldiers::engage(Soldiers * newEnemy) {
 
-}
-
-void Soldiers::execute() {
-
-}
-
-void Soldiers::retreat() {
-
-}
-
-void Soldiers::rest() {
-
-}
-
-void Soldiers::engage() {
+    this->enemy = newEnemy;
+    newEnemy->enemy = this;
+    prepare();
+    enemy->prepare();
+    fighting = true;
+    newEnemy->fighting = true;
+    execute();
+    enemy->execute();
+    disengage();
+    enemy->disengage();
 
 }
 
 void Soldiers::disengage() {
 
+    retreat();
+    fighting = false;
+    rest();
+
 }
+
+//bool Soldiers::isEngaged() {
+//    return fighting;
+//}
 
 Memento *Soldiers::militusMemento() {
     return nullptr;
@@ -39,4 +43,15 @@ Memento *Soldiers::militusMemento() {
 void Soldiers::vivificaMemento(Memento *mem) {
 
 }
+
+Soldiers::~Soldiers() {
+
+}
+
+string Soldiers::getType() {
+    return this->type;
+}
+
+
+
 

@@ -4,37 +4,40 @@
 #include "Soldiers.h"
 #include "BoatmanFactory.h"
 
+#include <iostream>
+#include <typeinfo>
+
+#include "Infantry.h"
+#include "ShieldBearer.h"
+
 using namespace std;
 
-class Boatman : private Soldiers{
-    private:
-        int healthPerSoldier;
-        int damagePerSoldier;
-        int defencePerSoldier;
-        int amountOfSoldiersPerUnit;
-        string unitName;
+class Boatman : public Soldiers{
+private:
+    //variables
+    bool hasOar;
+    bool raisedOar;
 
-        void prepare();
-        void execute();
-        void retreat();
-        void rest();
+    //Functions
+    void prepare();
+    void execute();
+    void retreat();
+    void rest();
 
+public:
+    Boatman(int health, int damage, int defence, int amt, string name);
 
-    public:
-        Boatman(int health, int damage, int defence, int amt, string name);
+    Soldiers * clonis();
+    int getHealth();
+    int getDamage();
+    int getDefence();
+    int getAmt();
+    string getName();
 
-        Soldiers * clonis();
-        int getHealth();
-        int getDamage();
-        int getDefence();
-        int getAmt();
+    int dealDamage(int damageDealt);
 
-
-        void engage();
-        void disengage();
-
-        Memento * militusMemento();
-        void vivificaMemento(Memento * mem);
+    Memento * militusMemento();
+    void vivificaMemento(Memento * mem);
 };
 
 #endif //PRAC2_BOATMAN_H

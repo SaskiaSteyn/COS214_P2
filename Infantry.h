@@ -3,24 +3,26 @@
 
 #include "Soldiers.h"
 #include "InfantryFactory.h"
+
+#include "Boatman.h"
+#include "ShieldBearer.h"
+
 #include <iostream>
+#include <typeinfo>
 
 using namespace std;
 
 class Infantry : public Soldiers{
     private:
-        int healthPerSoldier;
-        int damagePerSoldier;
-        int defencePerSoldier;
-        int amountOfSoldiersPerUnit;
-        string unitName;
+        //variables
+        bool hasGun;
+        bool gunLoaded;
 
+        //Functions
         void prepare();
         void execute();
         void retreat();
         void rest();
-
-
 
     public:
         Infantry(int health, int damage, int defence, int amt, string name);
@@ -30,10 +32,9 @@ class Infantry : public Soldiers{
         int getDamage();
         int getDefence();
         int getAmt();
+        string getName();
 
-
-        void engage();
-        void disengage();
+        int dealDamage(int damageDealt);
 
         Memento * militusMemento();
         void vivificaMemento(Memento * mem);
