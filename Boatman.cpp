@@ -1,34 +1,51 @@
 
 #include "Boatman.h"
 
-Boatman::Boatman(int health, int damage, int defence, int amt, string name) : Soldiers(health, damage, defence, amt, name) {}
+Boatman::Boatman(int health, int damage, int defence, int amt, string name) : Soldiers(health, damage, defence, amt, name) {
+    this->raisedOar = false;
+    this->hasOar = false;
+    this->type = "Boatman";
+}
 
 Soldiers *Boatman::clonis() {
-    return nullptr;
+    Boatman * newShielBearer = new Boatman(this->healthPerSoldier, this->damagePerSoldier, this->defencePerSoldier, this->amountOfSoldiersPerUnit,
+                                                     this->unitName);
+    newShielBearer->hasOar = this->hasOar;
+    newShielBearer->raisedOar = this->raisedOar;
+
+    newShielBearer->enemy = this->enemy;
+    newShielBearer->fighting = this->fighting;
+
+    return newShielBearer;
 }
 
 void Boatman::prepare() {
-
+    //Equips a shield
+    this->hasOar = true;
+    cout << this->unitName << " has equipped an oar" << endl;
 }
 
 void Boatman::execute() {
+    //Hold up shield to stop a blow or to block ammo
+    this->raisedOar = true;
+    cout << this->unitName << " has readied their oar" << endl;
 
+    int tempDamage = this->enemy->dealDamage(20);
+    damagePerSoldier += tempDamage;
 }
 
 void Boatman::retreat() {
+    //Walks backwards with shield still facing forward
+    this->raisedOar = false;
+    cout << this->unitName << " has lowered their oar" << endl;
 
 }
 
-void Boatman::rest() {
+void Boatman::rest(){
+    //Hides behind shield and sits down
+    this->hasOar = false;
+    cout << this->unitName << " is resting" << endl;
 
-}
-
-void Boatman::engage() {
-    Soldiers::engage();
-}
-
-void Boatman::disengage() {
-    Soldiers::disengage();
 }
 
 int Boatman::getHealth() {
@@ -45,6 +62,39 @@ int Boatman::getDamage() {
 
 int Boatman::getDefence() {
     return defencePerSoldier;
+}
+
+int Boatman::dealDamage(int damageDealt) {
+
+    if(this->enemy->getType() == "ShieldBearer"){
+        cout << this->unitName << " fought a shield bearer and won" << endl;
+        healthPerSoldier -= damageDealt/2;
+
+        cout << "Current health of " << this->unitName << " is: " << healthPerSoldier << endl;
+        return damageDealt;
+    }
+
+    if(this->enemy->getType() == "Infantry"){
+        cout << this->unitName << " fought an infantry soldier and lost" << endl;
+        healthPerSoldier -= damageDealt*2;
+
+        cout << "Current health of " << this->unitName << " is: " << healthPerSoldier << endl;
+        return damageDealt;
+    }
+
+    if(this->enemy->getType() == "Boatman"){
+        cout << this->unitName << " fought another boatman and they fought to a stalemate" << endl;
+        healthPerSoldier -= damageDealt;
+
+        cout << "Current health of " << this->unitName << " is: " << healthPerSoldier << endl;
+        return damageDealt;
+    }
+
+    return 0;
+}
+
+string Boatman::getName() {
+    return this->unitName;
 }
 
 

@@ -4,18 +4,21 @@
 #include "Soldiers.h"
 #include "ShieldBearerFactory.h"
 
+#include "Infantry.h"
+#include "Boatman.h"
+
 #include <iostream>
+#include <typeinfo>
 
 using namespace std;
 
-class ShieldBearer : private Soldiers{
+class ShieldBearer : public Soldiers{
     private:
-        int healthPerSoldier;
-        int damagePerSoldier;
-        int defencePerSoldier;
-        int amountOfSoldiersPerUnit;
-        string unitName;
+    //variables
+        bool hasShield;
+        bool shieldRaised;
 
+    //Functions
         void prepare();
         void execute();
         void retreat();
@@ -29,13 +32,14 @@ class ShieldBearer : private Soldiers{
         int getDamage();
         int getDefence();
         int getAmt();
+        string getName();
 
-
-        void engage();
-        void disengage();
+        int dealDamage(int damageDealt);
 
         Memento * militusMemento();
         void vivificaMemento(Memento * mem);
+
+
 };
 
 #endif //PRAC2_SHIELDBEARER_H
