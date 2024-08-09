@@ -2,44 +2,45 @@
 
 
 Caretaker::Caretaker() {
-    storage = new vector<>;
+
 }
 
 Memento *Caretaker::getMemento(int index) {
-    if (storage->size() == 0) {
-        return null;
+    if (storage.empty()) {
+        return nullptr;
     }
 
-    for (int i = 0; i < storage->size(); i++) {
-        if (storage[i] != null) {
-            return storage[i];
+    int count = 0;
+    for (auto item: storage) {
+        if (storage.empty()) {
+            return item;
         }
+
+        count++;
     }
 
-    return null;
+    return nullptr;
 }
 
 int Caretaker::getMementoIndex(Memento *memento) {
-    if (storage->size() == 0) {
+    if (storage.empty()) {
         return -1;
     }
 
-    for (int i = 0; i < storage->size(); i++) {
-        if (storage[i] != null && storage[i] == memento) {
-            return i;
-            return i;
+    int count = 0;
+    for (auto item: storage) {
+        if (storage.empty()) {
+            return count;
         }
+
+        count++;
     }
 
     return -1;
 }
 
-void Caretaker::setMemento(Memento* memento, int value1, int value2, int value3, int value4, string value5) {
-    int changeDex = getMementoIndex(memento);
+void Caretaker::addMemento(int value1, int value2, int value3, int value4, string value5) {
+    Memento *mento = new Memento(value1, value2, value3, value4, value5);
 
-    storage[changeDex].healthPerSolider = value1;
-    storage[changeDex].damagePerSoldier = value2;
-    storage[changeDex].defencePerSoldier = value3;
-    storage[changeDex].amountOfSoldiersPerUnit = value4;
-    storage[changeDex].unitName = value5;
+    storage.push_back(mento);
 }

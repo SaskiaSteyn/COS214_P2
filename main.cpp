@@ -4,16 +4,12 @@
 #include "Boatman.h"
 #include "ShieldBearer.h"
 
-#include "InfantryFactory.h"
-#include "BoatmanFactory.h"
-#include "ShieldBearerFactory.h"
-
 using namespace std;
 
 void testSoldiers() {
-    Infantry infantrySoldier(200, 20, 12, 50, "Footmen");
-    Boatman boatmanSoldier(200, 20, 12, 50, "Sailor");
-    ShieldBearer shieldBearerSoldier(200, 20, 12, 50, "Shieldmaiden");
+    Infantry infantrySoldier(200, 40, 0, 12, 50, "Footmen");
+    Boatman boatmanSoldier(200, 30, 0, 12, 50, "Sailor");
+    ShieldBearer shieldBearerSoldier(200, 20, 0, 12, 50, "Shieldmaiden");
 
     cout << "You have these soldiers: " << infantrySoldier.getName() << " | " << boatmanSoldier.getName() << " | " << shieldBearerSoldier.getName() << endl << endl;
 
@@ -27,6 +23,7 @@ void testSoldiers() {
     cout << "Name: " << infantrySoldier.getName() << endl;
     cout << "Health " << infantrySoldier.getHealth() << endl;
     cout << "Damage: " << infantrySoldier.getDamage() << endl;
+    cout << "Total Damage caused: " << infantrySoldier.getTotalDamage() << endl;
     cout << "Defence: " << infantrySoldier.getDefence() << endl;
     cout << "Amount: " << infantrySoldier.getAmt() << endl << endl;
 
@@ -35,6 +32,7 @@ void testSoldiers() {
     cout << "Name: " << clonedSoldier->getName() << endl;
     cout << "Health " << clonedSoldier->getHealth() << endl;
     cout << "Damage: " << clonedSoldier->getDamage() << endl;
+    cout << "Total damage caused: " << clonedSoldier->getTotalDamage() << endl;
     cout << "Defence: " << clonedSoldier->getDefence() << endl;
     cout << "Amount: " << clonedSoldier->getAmt() << endl << endl;
 
@@ -46,7 +44,7 @@ void testSoldiers() {
     cout << "Here are the stats of the Infantry soldiers before the fight: " << endl;
     cout << "Name: " << infantrySoldier.getName() << endl;
     cout << "Health " << infantrySoldier.getHealth() << endl;
-    cout << "Damage: " << infantrySoldier.getDamage() << endl;
+    cout << "Total damage caused: " << infantrySoldier.getTotalDamage() << endl;
     cout << "Defence: " << infantrySoldier.getDefence() << endl;
     cout << "Amount: " << infantrySoldier.getAmt() << endl << endl;
 
@@ -64,7 +62,7 @@ void testSoldiers() {
     cout << "Here are the stats of the after the fight Infantry: " << endl;
     cout << "Name: " << infantrySoldier.getName() << endl;
     cout << "Health " << infantrySoldier.getHealth() << endl;
-    cout << "Damage: " << infantrySoldier.getDamage() << endl;
+    cout << "Total damage caused: " << infantrySoldier.getTotalDamage() << endl;
     cout << "Defence: " << infantrySoldier.getDefence() << endl;
     cout << "Amount: " << infantrySoldier.getAmt() << endl << endl;
 
@@ -74,7 +72,7 @@ void testSoldiers() {
     cout << "Here are the stats of the shield bearers before the fight: " << endl;
     cout << "Name: " << shieldBearerSoldier.getName() << endl;
     cout << "Health " << shieldBearerSoldier.getHealth() << endl;
-    cout << "Damage: " << shieldBearerSoldier.getDamage() << endl;
+    cout << "Total damage caused: " << shieldBearerSoldier.getTotalDamage() << endl;
     cout << "Defence: " << shieldBearerSoldier.getDefence() << endl;
     cout << "Amount: " << shieldBearerSoldier.getAmt() << endl << endl;
 
@@ -91,7 +89,7 @@ void testSoldiers() {
     cout << "Here are the stats of the shield bearers after the fight: " << endl;
     cout << "Name: " << shieldBearerSoldier.getName() << endl;
     cout << "Health " << shieldBearerSoldier.getHealth() << endl;
-    cout << "Damage: " << shieldBearerSoldier.getDamage() << endl;
+    cout << "Total damage caused: " << shieldBearerSoldier.getTotalDamage() << endl;
     cout << "Defence: " << shieldBearerSoldier.getDefence() << endl;
     cout << "Amount: " << shieldBearerSoldier.getAmt() << endl << endl;
 
@@ -100,7 +98,7 @@ void testSoldiers() {
     cout << "Here are the stats of the boatmen before the fight: " << endl;
     cout << "Name: " << boatmanSoldier.getName() << endl;
     cout << "Health " << boatmanSoldier.getHealth() << endl;
-    cout << "Damage: " << boatmanSoldier.getDamage() << endl;
+    cout << "Total damage caused: " << boatmanSoldier.getTotalDamage() << endl;
     cout << "Defence: " << boatmanSoldier.getDefence() << endl;
     cout << "Amount: " << boatmanSoldier.getAmt() << endl << endl;
 
@@ -117,7 +115,7 @@ void testSoldiers() {
     cout << "Here are the stats of the boatmen after the fight: " << endl;
     cout << "Name: " << boatmanSoldier.getName() << endl;
     cout << "Health " << boatmanSoldier.getHealth() << endl;
-    cout << "Damage: " << boatmanSoldier.getDamage() << endl;
+    cout << "Total damage caused: " << boatmanSoldier.getTotalDamage() << endl;
     cout << "Defence: " << boatmanSoldier.getDefence() << endl;
     cout << "Amount: " << boatmanSoldier.getAmt() << endl << endl;
 
