@@ -25,19 +25,17 @@ private:
     void rest();
 
 public:
-    Boatman(int health, int damage, int defence, int amt, string name);
+    Boatman(int health, int damage, int totalDamage, int defence, int amt, string name);
 
     Soldiers * clonis();
     int getHealth();
     int getDamage();
+    int getTotalDamage();
     int getDefence();
     int getAmt();
     string getName();
 
     int dealDamage(int damageDealt);
-
-    Memento * militusMemento();
-    void vivificaMemento(Memento * mem);
 };
 
 #endif //PRAC2_BOATMAN_H

@@ -1,8 +1,9 @@
 #include "Soldiers.h"
 
-Soldiers::Soldiers(int health, int damage, int defence, int amt, string name) {
+Soldiers::Soldiers(int health, int damage, int totalDamage, int defence, int amt, string name) {
     this->healthPerSoldier = health;
     this->damagePerSoldier = damage;
+    this->totalDamageCaused = totalDamage;
     this->defencePerSoldier = defence;
     this->amountOfSoldiersPerUnit = amt;
     this->unitName = name;
@@ -32,16 +33,12 @@ void Soldiers::disengage() {
 
 }
 
-//bool Soldiers::isEngaged() {
-//    return fighting;
-//}
-
 Memento *Soldiers::militusMemento() {
     return nullptr;
 }
 
 void Soldiers::vivificaMemento(Memento *mem) {
-
+    return;
 }
 
 Soldiers::~Soldiers() {

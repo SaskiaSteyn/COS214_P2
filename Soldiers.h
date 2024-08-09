@@ -10,12 +10,13 @@ using namespace std;
 
 class Soldiers {
     public:
-        Soldiers(int health, int damage, int defence, int amt, string name);
+        Soldiers(int health, int damage, int totalDamage, int defence, int amt, string name);
         ~Soldiers();
 
         virtual Soldiers * clonis() = 0;
         virtual int getHealth() = 0;
         virtual int getDamage() = 0;
+        virtual int getTotalDamage() = 0;
         virtual int getDefence() = 0;
         virtual int getAmt() = 0;
         virtual string getName() = 0;
@@ -25,7 +26,7 @@ class Soldiers {
         virtual void engage(Soldiers * newEnemy);
         void disengage();
 
-        string getType();
+        virtual string getType();
 
         Memento * militusMemento();
         void vivificaMemento(Memento * mem);
@@ -36,6 +37,7 @@ class Soldiers {
 
         int healthPerSoldier;
         int damagePerSoldier;
+        int totalDamageCaused;
         int defencePerSoldier;
         int amountOfSoldiersPerUnit;
         string unitName;

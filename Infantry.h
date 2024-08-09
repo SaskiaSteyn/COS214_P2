@@ -25,19 +25,17 @@ class Infantry : public Soldiers{
         void rest();
 
     public:
-        Infantry(int health, int damage, int defence, int amt, string name);
+        Infantry(int health, int damage, int totalDamage, int defence, int amt, string name);
 
         Soldiers * clonis();
         int getHealth();
         int getDamage();
+        int getTotalDamage();
         int getDefence();
         int getAmt();
         string getName();
 
         int dealDamage(int damageDealt);
-
-        Memento * militusMemento();
-        void vivificaMemento(Memento * mem);
 };
 
 #endif //PRAC2_INFANTRY_H

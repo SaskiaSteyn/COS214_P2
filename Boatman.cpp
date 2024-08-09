@@ -1,28 +1,28 @@
 
 #include "Boatman.h"
 
-Boatman::Boatman(int health, int damage, int defence, int amt, string name) : Soldiers(health, damage, defence, amt, name) {
+Boatman::Boatman(int health, int damage, int totalDamage, int defence, int amt, string name) : Soldiers(health, damage, totalDamage, defence, amt, name) {
     this->raisedOar = false;
     this->hasOar = false;
     this->type = "Boatman";
 }
 
 Soldiers *Boatman::clonis() {
-    Boatman * newShielBearer = new Boatman(this->healthPerSoldier, this->damagePerSoldier, this->defencePerSoldier, this->amountOfSoldiersPerUnit,
+    Boatman * newBoatmanSoldier = new Boatman(this->healthPerSoldier, this->damagePerSoldier, this->totalDamageCaused, this->defencePerSoldier, this->amountOfSoldiersPerUnit,
                                                      this->unitName);
-    newShielBearer->hasOar = this->hasOar;
-    newShielBearer->raisedOar = this->raisedOar;
+    newBoatmanSoldier->hasOar = this->hasOar;
+    newBoatmanSoldier->raisedOar = this->raisedOar;
 
-    newShielBearer->enemy = this->enemy;
-    newShielBearer->fighting = this->fighting;
+    newBoatmanSoldier->enemy = this->enemy;
+    newBoatmanSoldier->fighting = this->fighting;
 
-    return newShielBearer;
+    return newBoatmanSoldier;
 }
 
 void Boatman::prepare() {
     //Equips a shield
     this->hasOar = true;
-    cout << this->unitName << " has equipped an oar" << endl;
+    cout << this->unitName << " has equipped an oar ⛵️" << endl;
 }
 
 void Boatman::execute() {
@@ -30,8 +30,8 @@ void Boatman::execute() {
     this->raisedOar = true;
     cout << this->unitName << " has readied their oar" << endl;
 
-    int tempDamage = this->enemy->dealDamage(20);
-    damagePerSoldier += tempDamage;
+    int tempDamage = this->enemy->dealDamage(this->getDamage());
+    totalDamageCaused += tempDamage;
 }
 
 void Boatman::retreat() {
@@ -60,6 +60,10 @@ int Boatman::getDamage() {
     return damagePerSoldier;
 }
 
+int Boatman::getTotalDamage() {
+    return this->totalDamageCaused;
+}
+
 int Boatman::getDefence() {
     return defencePerSoldier;
 }
@@ -67,7 +71,7 @@ int Boatman::getDefence() {
 int Boatman::dealDamage(int damageDealt) {
 
     if(this->enemy->getType() == "ShieldBearer"){
-        cout << this->unitName << " fought a shield bearer and won" << endl;
+        cout << this->unitName << " fought a shield bearer and won 🏆" << endl;
         healthPerSoldier -= damageDealt/2;
 
         cout << "Current health of " << this->unitName << " is: " << healthPerSoldier << endl;
@@ -75,7 +79,7 @@ int Boatman::dealDamage(int damageDealt) {
     }
 
     if(this->enemy->getType() == "Infantry"){
-        cout << this->unitName << " fought an infantry soldier and lost" << endl;
+        cout << this->unitName << " fought an infantry soldier and lost 😭" << endl;
         healthPerSoldier -= damageDealt*2;
 
         cout << "Current health of " << this->unitName << " is: " << healthPerSoldier << endl;
@@ -83,7 +87,7 @@ int Boatman::dealDamage(int damageDealt) {
     }
 
     if(this->enemy->getType() == "Boatman"){
-        cout << this->unitName << " fought another boatman and they fought to a stalemate" << endl;
+        cout << this->unitName << " fought another boatman and they fought to a stalemate ⚔️" << endl;
         healthPerSoldier -= damageDealt;
 
         cout << "Current health of " << this->unitName << " is: " << healthPerSoldier << endl;

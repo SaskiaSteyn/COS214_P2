@@ -1,27 +1,27 @@
 #include "Infantry.h"
 
-Infantry::Infantry(int health, int damage, int defence, int amt, string name) : Soldiers(health, damage, defence, amt, name) {
+Infantry::Infantry(int health, int damage, int totalDamage, int defence, int amt, string name) : Soldiers(health, damage, totalDamage, defence, amt, name) {
     this->gunLoaded = false;
     this->hasGun = false;
     this->type = "Infantry";
 }
 
 Soldiers *Infantry::clonis() {
-    Infantry * newShielBearer = new Infantry(this->healthPerSoldier, this->damagePerSoldier, this->defencePerSoldier, this->amountOfSoldiersPerUnit,
-                                                     this->unitName);
-    newShielBearer->hasGun = this->hasGun;
-    newShielBearer->gunLoaded = this->gunLoaded;
+    Infantry * newInfantrySoldier = new Infantry(this->healthPerSoldier, this->damagePerSoldier, this->totalDamageCaused, this->defencePerSoldier, this->amountOfSoldiersPerUnit,
+                                             this->unitName);
+    newInfantrySoldier->hasGun = this->hasGun;
+    newInfantrySoldier->gunLoaded = this->gunLoaded;
 
-    newShielBearer->enemy = this->enemy;
-    newShielBearer->fighting = this->fighting;
+    newInfantrySoldier->enemy = this->enemy;
+    newInfantrySoldier->fighting = this->fighting;
 
-    return newShielBearer;
+    return newInfantrySoldier;
 }
 
 void Infantry::prepare() {
     //Equips a shield
     this->hasGun = true;
-    cout << this->unitName << " has equipped a weapon" << endl;
+    cout << this->unitName << " has equipped a weapon 🔫" << endl;
 }
 
 void Infantry::execute() {
@@ -29,8 +29,8 @@ void Infantry::execute() {
     this->gunLoaded = true;
     cout << this->unitName << " has raised their weapon" << endl;
 
-    int tempDamage = this->enemy->dealDamage(20);
-    damagePerSoldier += tempDamage;
+    int tempDamage = this->enemy->dealDamage(this->getDamage());
+    totalDamageCaused += tempDamage;
 }
 
 void Infantry::retreat() {
@@ -59,13 +59,17 @@ int Infantry::getDamage() {
     return damagePerSoldier;
 }
 
+int Infantry::getTotalDamage() {
+    return this->totalDamageCaused;
+}
+
 int Infantry::getDefence() {
     return defencePerSoldier;
 }
 
 int Infantry::dealDamage(int damageDealt) {
     if(this->enemy->getType() == "Boatman"){
-        cout << this->unitName << " fought a Boatman soldier and won" << endl;
+        cout << this->unitName << " fought a Boatman soldier and won 🏆" << endl;
         healthPerSoldier -= damageDealt/2;
 
         cout << "Current health of " << this->unitName << " is: " << healthPerSoldier << endl;
@@ -73,7 +77,7 @@ int Infantry::dealDamage(int damageDealt) {
     }
 
     if(this->enemy->getType() == "ShieldBearer"){
-        cout << this->unitName << " fought a Shield bearer and lost" << endl;
+        cout << this->unitName << " fought a Shield bearer and lost 😭" << endl;
         healthPerSoldier -= damageDealt*2;
 
         cout << "Current health of " << this->unitName << " is: " << healthPerSoldier << endl;
@@ -81,7 +85,7 @@ int Infantry::dealDamage(int damageDealt) {
     }
 
     if(this->enemy->getType() == "Infantry"){
-        cout << this->unitName << " fought an Infantry soldier and they fought to a stalemate" << endl;
+        cout << this->unitName << " fought an Infantry soldier and they fought to a stalemate ⚔️" << endl;
         healthPerSoldier -= damageDealt;
 
         cout << "Current health of " << this->unitName << " is: " << healthPerSoldier << endl;

@@ -2,21 +2,32 @@
 #define PRAC2_MEMENTO_H
 
 #include <iostream>
-#include "Caretaker.h"
+//#include "Caretaker.h"
 
 using namespace std;
 
 class Memento {
-    private:
-        int healthPerSoldier;
-        int damagePerSoldier;
-        int defencePerSoldier;
-        int amountOfSoldiersPerUnit;
-        string unitName;
+protected:
+    int healthPerSoldier;
+    int damagePerSoldier;
+    int defencePerSoldier;
+    int amountOfSoldiersPerUnit;
+    string unitName;
 
-        Memento(int value1, int value2, int value3, int value4, string value5);
+public:
+    Memento(int value1, int value2, int value3, int value4, string value5);
 
-        friend class Caretaker
+    int getHealth();
+    int getDamage();
+    int getDefence();
+    int getAmt();
+    string getName();
+
+    void setHealth(int hp);
+    void setDamage(int dmg);
+    void setDefence(int def);
+    void setAmt(int amt);
+    void setName(string name);
 };
 
 

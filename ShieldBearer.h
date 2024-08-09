@@ -25,21 +25,17 @@ class ShieldBearer : public Soldiers{
         void rest();
 
     public:
-        ShieldBearer(int health, int damage, int defence, int amt, string name);
+        ShieldBearer(int health, int damage, int totalDamage, int defence, int amt, string name);
 
         Soldiers * clonis();
         int getHealth();
         int getDamage();
+        int getTotalDamage();
         int getDefence();
         int getAmt();
         string getName();
 
         int dealDamage(int damageDealt);
-
-        Memento * militusMemento();
-        void vivificaMemento(Memento * mem);
-
-
 };
 
 #endif //PRAC2_SHIELDBEARER_H
