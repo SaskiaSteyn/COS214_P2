@@ -14,7 +14,7 @@ public:
     Caretaker();
     Memento* getMemento(int index);
     int getMementoIndex(Memento* memento);
-    void addMemento(int value1, int value2, int value3, int value4, string value5);
+    void addMemento(int healthPerSoldier, int damagePerSoldier, int totalDamage, int defencePerSoldier, int amountOfSoldiersPerUnit, string unitName);
 
 //        friend class Memento;
 };

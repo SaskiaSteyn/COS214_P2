@@ -39,8 +39,8 @@ int Caretaker::getMementoIndex(Memento *memento) {
     return -1;
 }
 
-void Caretaker::addMemento(int value1, int value2, int value3, int value4, string value5) {
-    Memento *mento = new Memento(value1, value2, value3, value4, value5);
+void Caretaker::addMemento(int healthPerSoldier, int damagePerSoldier, int totalDamage, int defencePerSoldier, int amountOfSoldiersPerUnit, string unitName) {
+    Memento *mento = new Memento(healthPerSoldier, damagePerSoldier, totalDamage, defencePerSoldier, amountOfSoldiersPerUnit, unitName);
 
     storage.push_back(mento);
 }

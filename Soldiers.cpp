@@ -34,11 +34,16 @@ void Soldiers::disengage() {
 }
 
 Memento *Soldiers::militusMemento() {
-    return nullptr;
+    return new Memento(this->healthPerSoldier, this->damagePerSoldier, this->totalDamageCaused, this->defencePerSoldier, this->amountOfSoldiersPerUnit, this->unitName);
 }
 
 void Soldiers::vivificaMemento(Memento *mem) {
-    return;
+    this->healthPerSoldier = mem->getHealth();
+    this->damagePerSoldier = mem->getDamage();
+    this->totalDamageCaused = mem->getTotalDamage();
+    this->defencePerSoldier = mem->getDefence();
+    this->amountOfSoldiersPerUnit = mem->getAmt();
+    this->unitName = mem->getName();
 }
 
 Soldiers::~Soldiers() {
