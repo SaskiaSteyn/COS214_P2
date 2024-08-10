@@ -1,11 +1,12 @@
 #include "Memento.h"
 
-Memento::Memento(int value1, int value2, int value3, int value4, string value5) {
-    this->healthPerSoldier = value1;
-    this->damagePerSoldier = value2;
-    this->defencePerSoldier = value3;
-    this->amountOfSoldiersPerUnit = value4;
-    this->unitName = value5;
+Memento::Memento(int healthPerSoldier, int damagePerSoldier, int totalDamage, int defencePerSoldier, int amountOfSoldiersPerUnit, string unitName) {
+    this->healthPerSoldier = healthPerSoldier;
+    this->damagePerSoldier = damagePerSoldier;
+    this->totalDamageCaused = totalDamage;
+    this->defencePerSoldier = defencePerSoldier;
+    this->amountOfSoldiersPerUnit = amountOfSoldiersPerUnit;
+    this->unitName = unitName;
 }
 
 int Memento::getHealth() {
@@ -14,6 +15,10 @@ int Memento::getHealth() {
 
 int Memento::getDamage() {
     return damagePerSoldier;
+}
+
+int Memento::getTotalDamage() {
+    return this->totalDamageCaused;
 }
 
 int Memento::getDefence() {
@@ -47,3 +52,9 @@ void Memento::setAmt(int amt) {
 void Memento::setName(string name) {
     this->unitName = name;
 }
+
+void Memento::setTotalDamage(int tDamage) {
+    this->totalDamageCaused = tDamage;
+}
+
+
