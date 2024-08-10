@@ -45,3 +45,4 @@ void Caretaker::addMemento(int healthPerSoldier, int damagePerSoldier, int total
 void Caretaker::addMemento(Memento *memento) {
     storage.push_back(memento);
 }
+
