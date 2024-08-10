@@ -58,3 +58,10 @@ void Memento::setTotalDamage(int tDamage) {
 }
 
 
+string Memento::printFunc() {
+    string output = "";
+    string health = to_string(this->getHealth());
+    output += this->getName() + "'s health is " + health + "\n";
+
+    return output;
+}

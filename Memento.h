@@ -31,6 +31,8 @@ public:
     void setDefence(int def);
     void setAmt(int amt);
     void setName(string name);
+
+    string printFunc();
 };
 
 

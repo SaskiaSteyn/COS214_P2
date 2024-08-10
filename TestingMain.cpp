@@ -137,21 +137,25 @@ void testFactories() {
     Soldiers* blueBoatman = boatmanFactory.createUnit();
     Soldiers* blueShieldBearer = shieldBearerFactory.createUnit();
 
+    cout << "====================Testing Factory====================" << endl << endl;
+
+    cout << "=====Infantry factory:=====" << endl;
     cout << blueInfantry->getType() << endl;
-    cout << "Total health in this unit: " << infantryFactory.calculateTotalHealthPerUnit();
-    cout << "Total damage in this unit: " << infantryFactory.calculateTotalDamagePerUnit();
-    cout << "Total defence in this unit: " << infantryFactory.calculateTotalDefencePerUnit();
+    cout << "Total health in this unit: " << infantryFactory.calculateTotalHealthPerUnit() << endl;
+    cout << "Total damage in this unit: " << infantryFactory.calculateTotalDamagePerUnit() << endl;
+    cout << "Total defence in this unit: " << infantryFactory.calculateTotalDefencePerUnit() << endl << endl;
 
-
+    cout << "=====Boatman factory:=====" << endl;
     cout << blueBoatman->getType() << endl;
-    cout << "Total health in this unit: " << boatmanFactory.calculateTotalHealthPerUnit();
-    cout << "Total damage in this unit: " << boatmanFactory.calculateTotalDamagePerUnit();
-    cout << "Total defence in this unit: " << boatmanFactory.calculateTotalDefencePerUnit();
+    cout << "Total health in this unit: " << boatmanFactory.calculateTotalHealthPerUnit() << endl;
+    cout << "Total damage in this unit: " << boatmanFactory.calculateTotalDamagePerUnit() << endl;
+    cout << "Total defence in this unit: " << boatmanFactory.calculateTotalDefencePerUnit() << endl << endl;
 
+    cout << "=====Shield bearer factory:=====" << endl;
     cout << blueShieldBearer->getType() << endl;
-    cout << "Total health in this unit: " << shieldBearerFactory.calculateTotalHealthPerUnit();
-    cout << "Total damage in this unit: " << shieldBearerFactory.calculateTotalDamagePerUnit();
-    cout << "Total defence in this unit: " << shieldBearerFactory.calculateTotalDefencePerUnit();
+    cout << "Total health in this unit: " << shieldBearerFactory.calculateTotalHealthPerUnit() << endl;
+    cout << "Total damage in this unit: " << shieldBearerFactory.calculateTotalDamagePerUnit() << endl;
+    cout << "Total defence in this unit: " << shieldBearerFactory.calculateTotalDefencePerUnit() << endl << endl;
 }
 
 void testMentos() {
@@ -181,12 +185,21 @@ void testMentos() {
 
     infantrySoldier->vivificaMemento(mento3);
 
-    cout << "Index of mento2: " << caretaker->getMementoIndex(mento2);
+    cout << "Index of mento2: " << caretaker->getMementoIndex(mento2) << endl;
+
+    mento3->setHealth(100);
+    mento3->setDamage(20);
+    mento3->setTotalDamage(0);
+    mento3->setDefence(20);
+    mento3->setAmt(10);
+    mento3->setName("Test Mento");
+
+    cout << mento3->printFunc();
 }
 
 int main() {
-//    testSoldiers();
-//    testFactories();
+    testSoldiers();
+    testFactories();
     testMentos();
     return 0;
 };
