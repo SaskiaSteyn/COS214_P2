@@ -122,10 +122,37 @@ void testSoldiers() {
 }
 
 void testFactories() {
+    Soldiers* infantrySoldier = new Infantry(200, 40, 0, 12, 50, "Footmen");
+    Soldiers* boatmanSoldier = new Boatman(200, 30, 0, 12, 50, "Sailor");
+    Soldiers* shieldBearerSoldier = new ShieldBearer(200, 20, 0, 12, 50, "Shieldmaiden");
 
+    InfantryFactory infantryFactory(infantrySoldier);
+    BoatmanFactory boatmanFactory(boatmanSoldier);
+    ShieldBearerFactory shieldBearerFactory(shieldBearerSoldier);
+
+    Soldiers* blueInfantry = infantryFactory.createUnit();
+    Soldiers* blueBoatman = boatmanFactory.createUnit();
+    Soldiers* blueShieldBearer = shieldBearerFactory.createUnit();
+
+    cout << blueInfantry->getType() << endl;
+    cout << "Total health in this unit: " << infantryFactory.calculateTotalHealthPerUnit();
+    cout << "Total damage in this unit: " << infantryFactory.calculateTotalDamagePerUnit();
+    cout << "Total defence in this unit: " << infantryFactory.calculateTotalDefencePerUnit();
+
+
+    cout << blueBoatman->getType() << endl;
+    cout << "Total health in this unit: " << boatmanFactory.calculateTotalHealthPerUnit();
+    cout << "Total damage in this unit: " << boatmanFactory.calculateTotalDamagePerUnit();
+    cout << "Total defence in this unit: " << boatmanFactory.calculateTotalDefencePerUnit();
+
+    cout << blueShieldBearer->getType() << endl;
+    cout << "Total health in this unit: " << shieldBearerFactory.calculateTotalHealthPerUnit();
+    cout << "Total damage in this unit: " << shieldBearerFactory.calculateTotalDamagePerUnit();
+    cout << "Total defence in this unit: " << shieldBearerFactory.calculateTotalDefencePerUnit();
 }
 
 int main() {
     testSoldiers();
+    testFactories();
     return 0;
 };
