@@ -12,7 +12,7 @@ Memento *Caretaker::getMemento(int index) {
 
     int count = 0;
     for (auto item: storage) {
-        if (storage.empty()) {
+        if (count == index && item != nullptr) {
             return item;
         }
 
@@ -27,13 +27,10 @@ int Caretaker::getMementoIndex(Memento *memento) {
         return -1;
     }
 
-    int count = 0;
-    for (auto item: storage) {
-        if (storage.empty()) {
-            return count;
+    for (int i = 0; i < storage.size(); i++) {
+        if (storage[i] != nullptr && storage[i] == memento) {
+            return i;
         }
-
-        count++;
     }
 
     return -1;
@@ -43,4 +40,8 @@ void Caretaker::addMemento(int healthPerSoldier, int damagePerSoldier, int total
     Memento *mento = new Memento(healthPerSoldier, damagePerSoldier, totalDamage, defencePerSoldier, amountOfSoldiersPerUnit, unitName);
 
     storage.push_back(mento);
+}
+
+void Caretaker::addMemento(Memento *memento) {
+    storage.push_back(memento);
 }

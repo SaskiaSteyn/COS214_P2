@@ -4,6 +4,9 @@
 #include "Boatman.h"
 #include "ShieldBearer.h"
 
+#include "Memento.h"
+#include "Caretaker.h"
+
 using namespace std;
 
 void testSoldiers() {
@@ -151,8 +154,39 @@ void testFactories() {
     cout << "Total defence in this unit: " << shieldBearerFactory.calculateTotalDefencePerUnit();
 }
 
+void testMentos() {
+    Soldiers *infantrySoldier = new Infantry(200, 40, 0, 12, 50, "Footmen");
+
+    Caretaker *caretaker = new Caretaker();
+
+//    caretaker->addMemento(infantrySoldier->getHealth(), infantrySoldier->getDamage(), infantrySoldier->getTotalDamage(), infantrySoldier->getDefence(), infantrySoldier->getAmt(), infantrySoldier->getName());
+    Memento *mento = infantrySoldier->militusMemento();
+
+    cout << "Created a mento" << endl;
+
+    caretaker->addMemento(mento->getHealth(), mento->getDamage(), mento->getTotalDamage(), mento->getDefence(),
+                          mento->getAmt(), mento->getName());
+
+    cout << "Added the mento" << endl;
+
+    Memento* mento2 = new Memento(200, 30, 0, 12, 50, "Footmen");
+
+    cout << "Created a second mento" << endl;
+
+    caretaker->addMemento(mento2);
+
+    cout << "Added the second mento" << endl;
+
+    Memento* mento3 = caretaker->getMemento(0);
+
+    infantrySoldier->vivificaMemento(mento3);
+
+    cout << "Index of mento2: " << caretaker->getMementoIndex(mento2);
+}
+
 int main() {
-    testSoldiers();
-    testFactories();
+//    testSoldiers();
+//    testFactories();
+    testMentos();
     return 0;
 };

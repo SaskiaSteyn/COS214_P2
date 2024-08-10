@@ -15,7 +15,7 @@ public:
     Memento* getMemento(int index);
     int getMementoIndex(Memento* memento);
     void addMemento(int healthPerSoldier, int damagePerSoldier, int totalDamage, int defencePerSoldier, int amountOfSoldiersPerUnit, string unitName);
-
+    void addMemento(Memento *memento);
 //        friend class Memento;
 };
 
