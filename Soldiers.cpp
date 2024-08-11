@@ -18,8 +18,8 @@ void Soldiers::engage(Soldiers * newEnemy) {
     enemy->prepare();
     fighting = true;
     newEnemy->fighting = true;
-    execute();
-    enemy->execute();
+    execute(this);
+    enemy->execute(this);
     disengage();
     enemy->disengage();
 

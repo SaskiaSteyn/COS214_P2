@@ -21,7 +21,10 @@ class Soldiers {
         virtual int getAmt() = 0;
         virtual string getName() = 0;
 
-        virtual int dealDamage(int damageDealt) = 0;
+        virtual int setAmount(int amount) = 0;
+        virtual int setHealth(int health) = 0;
+
+        virtual int dealDamage(int damageDealt, Soldiers * attacker) = 0;
 
         virtual void engage(Soldiers * newEnemy);
         void disengage();
@@ -33,6 +36,7 @@ class Soldiers {
 
     protected:
         Soldiers * enemy;
+        Soldiers * attacker;
         bool fighting;
 
         int healthPerSoldier;
@@ -44,9 +48,9 @@ class Soldiers {
         string type;
 
         virtual void prepare() = 0;
-        virtual void execute() = 0;
+        virtual void execute(Soldiers * attacker) = 0;
         virtual void retreat() = 0;
-        virtual void rest() = 0;
+        virtual bool rest() = 0;
 };
 
 #endif //PRAC2_SOLDIERS_H

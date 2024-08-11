@@ -20,9 +20,9 @@ private:
 
     //Functions
     void prepare();
-    void execute();
+    void execute(Soldiers * attacker);
     void retreat();
-    void rest();
+    bool rest();
 
 public:
     Boatman(int health, int damage, int totalDamage, int defence, int amt, string name);
@@ -35,7 +35,10 @@ public:
     int getAmt();
     string getName();
 
-    int dealDamage(int damageDealt);
+    int setAmount(int amount);
+    int setHealth(int health);
+
+    int dealDamage(int damageDealt, Soldiers * attacker);
 };
 
 #endif //PRAC2_BOATMAN_H
