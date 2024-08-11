@@ -24,12 +24,12 @@ void Infantry::prepare() {
     cout << this->unitName << " has equipped a weapon 🔫" << endl;
 }
 
-void Infantry::execute() {
+void Infantry::execute(Soldiers * attacker) {
     //Hold up shield to stop a blow or to block ammo
     this->gunLoaded = true;
     cout << this->unitName << " has raised their weapon" << endl;
 
-    int tempDamage = this->enemy->dealDamage(this->getDamage());
+    int tempDamage = this->enemy->dealDamage(this->getDamage(), attacker`);
     totalDamageCaused += tempDamage;
 }
 
@@ -40,10 +40,12 @@ void Infantry::retreat() {
 
 }
 
-void Infantry::rest(){
+bool Infantry::rest(){
     //Hides behind shield and sits down
     this->hasGun = false;
     cout << this->unitName << " is resting" << endl;
+
+    return true;
 
 }
 
@@ -67,29 +69,58 @@ int Infantry::getDefence() {
     return defencePerSoldier;
 }
 
-int Infantry::dealDamage(int damageDealt) {
-    if(this->enemy->getType() == "Boatman"){
-        cout << this->unitName << " fought a Boatman soldier and won 🏆" << endl;
-        healthPerSoldier -= damageDealt/2;
+int Infantry::dealDamage(int damageDealt, Soldiers * attacker) {
+    if(this == attacker){
+        if(this->enemy->getType() == "Boatman"){
+            cout << this->unitName << " fought a Boatman soldier and won 🏆" << endl;
+            enemy->setHealth(this->healthPerSoldier - (damageDealt * 2));
 
-        cout << "Current health of " << this->unitName << " is: " << healthPerSoldier << endl;
-        return damageDealt;
-    }
+            cout << "Current health of " << this->unitName << " is: " << healthPerSoldier << endl;
+            return damageDealt;
+        }
 
-    if(this->enemy->getType() == "ShieldBearer"){
-        cout << this->unitName << " fought a Shield bearer and lost 😭" << endl;
-        healthPerSoldier -= damageDealt*2;
+        if(this->enemy->getType() == "ShieldBearer"){
+            cout << this->unitName << " fought a Shield bearer and lost 😭" << endl;
+            enemy->setHealth(this->healthPerSoldier - damageDealt);
 
-        cout << "Current health of " << this->unitName << " is: " << healthPerSoldier << endl;
-        return damageDealt;
-    }
+            cout << "Current health of " << this->unitName << " is: " << healthPerSoldier << endl;
+            return damageDealt;
+        }
 
-    if(this->enemy->getType() == "Infantry"){
-        cout << this->unitName << " fought an Infantry soldier and they fought to a stalemate ⚔️" << endl;
-        healthPerSoldier -= damageDealt;
+        if(this->enemy->getType() == "Infantry"){
+            cout << this->unitName << " fought an Infantry soldier and they fought to a stalemate ⚔️" << endl;
+            enemy->setHealth(this->healthPerSoldier - damageDealt);
 
-        cout << "Current health of " << this->unitName << " is: " << healthPerSoldier << endl;
-        return damageDealt;
+            cout << "Current health of " << this->unitName << " is: " << healthPerSoldier << endl;
+            return damageDealt;
+        }
+
+        else{
+            if(this->enemy->getType() == "Boatman"){
+                cout << this->unitName << " fought a Boatman soldier and won 🏆" << endl;
+                enemy->setHealth(this->healthPerSoldier - damageDealt);
+
+                cout << "Current health of " << this->unitName << " is: " << healthPerSoldier << endl;
+                return damageDealt;
+            }
+
+            if(this->enemy->getType() == "ShieldBearer"){
+                cout << this->unitName << " fought a Shield bearer and lost 😭" << endl;
+                enemy->setHealth(this->healthPerSoldier - (damageDealt / 2));
+
+                cout << "Current health of " << this->unitName << " is: " << healthPerSoldier << endl;
+                return damageDealt;
+            }
+
+            if(this->enemy->getType() == "Infantry"){
+                cout << this->unitName << " fought an Infantry soldier and they fought to a stalemate ⚔️" << endl;
+
+                enemy->setHealth(this->healthPerSoldier - (damageDealt / 2));
+
+                cout << "Current health of " << this->unitName << " is: " << healthPerSoldier << endl;
+                return damageDealt;
+            }
+        }
     }
 
     return 0;
@@ -98,3 +129,12 @@ int Infantry::dealDamage(int damageDealt) {
 string Infantry::getName() {
     return this->unitName;
 }
+
+int Infantry::setAmount(int amount) {
+    return this->amountOfSoldiersPerUnit = amount;
+}
+
+int Infantry::setHealth(int health) {
+    return this->healthPerSoldier = health;
+}
+
