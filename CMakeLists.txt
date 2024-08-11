@@ -26,4 +26,5 @@ add_executable(COS214_P2
         SoldierFactory.h
         Soldiers.cpp
         Soldiers.h
-        TestingMain.cpp)
+        TestingMain.cpp
+        DemoMain.cpp)

@@ -29,7 +29,6 @@ void Soldiers::disengage() {
 
     retreat();
     fighting = false;
-    rest();
 
 }
 

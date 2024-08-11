@@ -197,9 +197,9 @@ void testMentos() {
     cout << mento3->printFunc();
 }
 
-int main() {
-    testSoldiers();
-    testFactories();
-    testMentos();
-    return 0;
-};
+//int main() {
+//    testSoldiers();
+//    testFactories();
+//    testMentos();
+//    return 0;
+//};
