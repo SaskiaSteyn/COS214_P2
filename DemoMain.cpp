@@ -36,9 +36,9 @@ void setBlueArmy(InfantryFactory &blueInfantryFactory, BoatmanFactory &blueBoatm
 
 
 
-//        if ((unitType != "infantry") || (unitType != "boatman") || (unitType != "shieldbearer")) {
-//            cout << "Please insert one of the following unit names" << endl;
-//        }
+        if ((unitType != "infantry") || (unitType != "boatman") || (unitType != "shieldbearer")) {
+            cout << "Please insert one of the following unit names" << endl;
+        }
     }
 
     cout << "How many " << unitType << " units do you want: ";
