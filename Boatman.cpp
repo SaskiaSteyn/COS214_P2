@@ -75,7 +75,9 @@ int Boatman::dealDamage(int damageDealt, Soldiers * attacker) {
         if(this->enemy->getType() == "ShieldBearer"){
             cout << this->unitName << " fought a shield bearer and won 🏆" << endl;
 
-            enemy->setHealth(this->healthPerSoldier - (damageDealt * 2));
+            int totalDamage = damageDealt * 2;
+            totalDamage = totalDamage * (100 - defencePerSoldier) / 100;
+            enemy->setHealth(this->healthPerSoldier - totalDamage);
 
             cout << "Current health of " << this->unitName << " is: " << healthPerSoldier << endl;
             return damageDealt;
@@ -84,7 +86,8 @@ int Boatman::dealDamage(int damageDealt, Soldiers * attacker) {
         if(this->enemy->getType() == "Infantry"){
             cout << this->unitName << " fought an infantry soldier and lost 😭" << endl;
 
-            enemy->setHealth(this->healthPerSoldier - damageDealt);
+            int totalDamage = damageDealt * (100 - defencePerSoldier) / 100;
+            enemy->setHealth(this->healthPerSoldier - totalDamage);
 
             cout << "Current health of " << this->unitName << " is: " << healthPerSoldier << endl;
             return damageDealt;
@@ -93,7 +96,8 @@ int Boatman::dealDamage(int damageDealt, Soldiers * attacker) {
         if(this->enemy->getType() == "Boatman"){
             cout << this->unitName << " fought another boatman and they fought to a stalemate ⚔️" << endl;
 
-            enemy->setHealth(this->healthPerSoldier - damageDealt);
+            int totalDamage = damageDealt * (100 - defencePerSoldier) / 100;
+            enemy->setHealth(this->healthPerSoldier - totalDamage);
 
             cout << "Current health of " << this->unitName << " is: " << healthPerSoldier << endl;
             return damageDealt;
@@ -103,7 +107,8 @@ int Boatman::dealDamage(int damageDealt, Soldiers * attacker) {
         if(this->enemy->getType() == "ShieldBearer"){
             cout << this->unitName << " fought a shield bearer and won 🏆" << endl;
 
-            enemy->setHealth(this->healthPerSoldier - damageDealt);
+            int totalDamage = damageDealt * (100 - defencePerSoldier) / 100;
+            enemy->setHealth(this->healthPerSoldier - totalDamage);
 
             cout << "Current health of " << this->unitName << " is: " << healthPerSoldier << endl;
             return damageDealt;
@@ -112,7 +117,9 @@ int Boatman::dealDamage(int damageDealt, Soldiers * attacker) {
         if(this->enemy->getType() == "Infantry"){
             cout << this->unitName << " fought an infantry soldier and lost 😭" << endl;
 
-            enemy->setHealth(this->healthPerSoldier - damageDealt / 2);
+            int totalDamage = damageDealt / 2;
+            totalDamage =  totalDamage * (100 - defencePerSoldier) / 100;
+            enemy->setHealth(this->healthPerSoldier - totalDamage);
 
             cout << "Current health of " << this->unitName << " is: " << healthPerSoldier << endl;
             return damageDealt;
@@ -121,7 +128,9 @@ int Boatman::dealDamage(int damageDealt, Soldiers * attacker) {
         if(this->enemy->getType() == "Boatman"){
             cout << this->unitName << " fought another boatman and they fought to a stalemate ⚔️" << endl;
 
-            enemy->setHealth(this->healthPerSoldier - (damageDealt / 2));
+            int totalDamage = damageDealt / 2;
+            totalDamage =  totalDamage * (100 - defencePerSoldier) / 100;
+            enemy->setHealth(this->healthPerSoldier - totalDamage);
 
             cout << "Current health of " << this->unitName << " is: " << healthPerSoldier << endl;
             return damageDealt;
