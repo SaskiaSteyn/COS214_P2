@@ -350,7 +350,7 @@ int main() {
         }
 
     }
-    
+
 
 
     //TODO: this has a bad access. Error message: EXC_BAD_ACCESS (code=1, address=0x30)
@@ -439,6 +439,16 @@ int main() {
                     if (gameMap[bluePos][troopNoBlue]->getName() == "Myrmidon" && blueMana < 10) {
                         cout << "Don't have enough mana. End of action" << endl;
                         break;
+                    }
+
+                    if (gameMap[bluePos][troopNoBlue]->getName() == "Hoplite") {
+                        blueMana -= 30;
+                    }
+                    if (gameMap[bluePos][troopNoBlue]->getName() == "Trireme Oarsmen") {
+                        blueMana -= 20;
+                    }
+                    if (gameMap[bluePos][troopNoBlue]->getName() == "Myrmidon") {
+                        blueMana -= 10;
                     }
 
                     gameMap[bluePos][troopNoBlue]->engage(gameMap[redPos][troopNoRed]);
@@ -549,6 +559,16 @@ int main() {
                         break;
                     }
 
+                    if (gameMap[bluePos][troopNoBlue]->getName() == "Hoplite") {
+                        blueMana -= 30;
+                    }
+                    if (gameMap[bluePos][troopNoBlue]->getName() == "Trireme Oarsmen") {
+                        blueMana -= 20;
+                    }
+                    if (gameMap[bluePos][troopNoBlue]->getName() == "Myrmidon") {
+                        blueMana -= 10;
+                    }
+
                     gameMap[bluePos][troopNoBlue]->engage(gameMap[redPos][troopNoRed]);
 
                     if (gameMap[bluePos][troopNoBlue]->getHealth() <= 0) {
@@ -649,17 +669,27 @@ int main() {
             }
             else if (action1 == "attack") {
                 if (inRange(gameMap, redPos)) {
-                    if (gameMap[bluePos][troopNoBlue]->getName() == "Legionary" && blueMana < 40) {
+                    if (gameMap[redPos][troopNoRed]->getName() == "Legionary" && redMana < 40) {
                         cout << "Don't have enough mana. End of action" << endl;
                         break;
                     }
-                    if (gameMap[bluePos][troopNoBlue]->getName() == "Quinquereme Rowers" && blueMana < 20) {
+                    if (gameMap[redPos][troopNoRed]->getName() == "Quinquereme Rowers" && redMana < 20) {
                         cout << "Don't have enough mana. End of action" << endl;
                         break;
                     }
-                    if (gameMap[bluePos][troopNoBlue]->getName() == "Praetorian Guard" && blueMana < 10) {
+                    if (gameMap[redPos][troopNoRed]->getName() == "Praetorian Guard" && redMana < 10) {
                         cout << "Don't have enough mana. End of action" << endl;
                         break;
+                    }
+
+                    if (gameMap[redPos][troopNoRed]->getName() == "Legionary") {
+                        redMana -= 30;
+                    }
+                    if (gameMap[redPos][troopNoRed]->getName() == "Quinquereme Rowers") {
+                        redMana -= 20;
+                    }
+                    if (gameMap[redPos][troopNoRed]->getName() == "Praetorian Guard") {
+                        redMana -= 10;
                     }
 
                     gameMap[redPos][troopNoRed]->engage(gameMap[bluePos][troopNoBlue]);
@@ -757,17 +787,27 @@ int main() {
             }
             else if (action2 == "attack") {
                 if (inRange(gameMap, redPos)) {
-                    if (gameMap[bluePos][troopNoBlue]->getName() == "Legionary" && blueMana < 40) {
+                    if (gameMap[redPos][troopNoRed]->getName() == "Legionary" && redMana < 40) {
                         cout << "Don't have enough mana. End of action" << endl;
                         break;
                     }
-                    if (gameMap[bluePos][troopNoBlue]->getName() == "Quinquereme Rowers" && blueMana < 20) {
+                    if (gameMap[redPos][troopNoRed]->getName() == "Quinquereme Rowers" && redMana < 20) {
                         cout << "Don't have enough mana. End of action" << endl;
                         break;
                     }
-                    if (gameMap[bluePos][troopNoBlue]->getName() == "Praetorian Guard" && blueMana < 10) {
+                    if (gameMap[redPos][troopNoRed]->getName() == "Praetorian Guard" && redMana < 10) {
                         cout << "Don't have enough mana. End of action" << endl;
                         break;
+                    }
+
+                    if (gameMap[redPos][troopNoRed]->getName() == "Legionary") {
+                        redMana -= 30;
+                    }
+                    if (gameMap[redPos][troopNoRed]->getName() == "Quinquereme Rowers") {
+                        redMana -= 20;
+                    }
+                    if (gameMap[redPos][troopNoRed]->getName() == "Praetorian Guard") {
+                        redMana -= 10;
                     }
 
                     gameMap[redPos][troopNoRed]->engage(gameMap[bluePos][troopNoBlue]);
