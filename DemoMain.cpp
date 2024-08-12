@@ -61,7 +61,7 @@ void setBlueArmy(InfantryFactory &blueInfantryFactory, BoatmanFactory &blueBoatm
             cin >> numUnits;
 
             if (blueUnits - numUnits < 0) {
-                cout << "Not enough units" << endl;
+                cout << "You do not have enough units. You only have " << blueUnits << " left." << endl;
             }
             if (numUnits < 1) {
                 cout << "Please enter a positive number" << endl;
@@ -135,13 +135,14 @@ void setRedArmy(InfantryFactory &redInfantryFactory, BoatmanFactory &redBoatmanF
             cin >> numUnits;
 
             if (redUnits - numUnits < 0) {
-                cout << "Not enough units" << endl;
+                cout << "You do not have enough units. You only have " << redUnits << " left." << endl;
             }
             if (numUnits < 1) {
                 cout << "Please enter a positive number" << endl;
             }
         }
 
+//        cout << "Finished making the army" << endl;
 
 
         if (unitType == "infantry") {
@@ -188,6 +189,7 @@ bool inRange(Soldiers** gameMap, int myPos) {
 }
 
 string getAction1(Soldiers** gameMap, int myPos) {
+    cout << "In the getAction function" << endl;
     cout << "Action 1:" << endl;
 
     string action = "";
@@ -329,6 +331,8 @@ int main() {
     int blueUnits = 100;
     int redUnits = 100;
 
+    cout << "Done making the armies" << endl;
+
     Soldiers* blueArmy[5];
     Soldiers* redArmy[5];
 
@@ -349,6 +353,8 @@ int main() {
     gameMap[3] = *redArmy;
     gameMap[4] = nullptr;
 
+    cout << "Starting to create the map. Before the for loop to print out the soldiers" << endl;
+    //TODO: this has a bad access. Error message: EXC_BAD_ACCESS (code=1, address=0x30)
     for (int i = 0; i < 5; i++) {
         if (blueArmy[i] != nullptr) {
             cout << blueArmy[i]->getName() << endl;
