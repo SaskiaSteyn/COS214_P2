@@ -20,8 +20,8 @@ Soldiers** setBlueArmy(InfantryFactory &blueInfantryFactory, BoatmanFactory &blu
     cout << "--------------------------" << endl;
 
     bool indeces[5];
-    for (int i = 0; i < 5; i++) {
-        indeces[i] = false;
+    for (bool item: indeces) {
+        item = false;
     }
 
     while (blueUnits != 0) {
@@ -35,7 +35,7 @@ Soldiers** setBlueArmy(InfantryFactory &blueInfantryFactory, BoatmanFactory &blu
 
         cout << "You have " << blueUnits << " units remaining" << endl;
 
-        string unitType = "";
+        string unitType;
 
         while ((unitType != "infantry") && (unitType != "boatman") && (unitType != "shieldbearer")) {
 
@@ -251,27 +251,34 @@ bool hasHealth(Soldiers***gameMap, int teamPos) {
     return false;
 }
 
-void generateMap(Soldiers*** gameMap, int bluePos, int redPos) {
+void generateMap(Soldiers*** gameMap, int bluePos, int redPos, int blueMana, int redMana) {
 
+    cout << endl << "Blue Mana = " << blueMana << "\t Red Mana = " << redMana;
     cout << endl << "================" << endl;
 
     cout << "| ";
 
     for (int i = 0; i < 5; i++) {
         if (gameMap[i] == nullptr) {
-            cout << "  ";
+            cout << "   ";
         }
         else if (i == bluePos){
-            cout << " " << "B ";
+            cout << " B ";
         }
         else if (i == redPos) {
-            cout << " " << "R ";
+            cout << " R ";
         }
     }
 
     cout << " |" << endl;
 
-    cout << "================" << endl;
+    cout << "| ";
+    for (int i = 0; i < 5; i++) {
+        cout << " ^ ";
+    }
+    cout << " |";
+
+    cout << endl << "================" << endl;
 }
 
 int main() {
@@ -333,22 +340,10 @@ int main() {
         gameMap[3][i] = redArmy[i];
     }
 
-//    for (int i = 0; i < 5; i++) {
-//        if (gameMap[1][i] != nullptr) {
-//            cout << gameMap[1][i]->getName() << endl;
-//        }
-//    }
-
     cout << "Starting to create the map. Before the for loop to print out the soldiers" << endl;
 
 
     //TODO: this has a bad access. Error message: EXC_BAD_ACCESS (code=1, address=0x30)
-//    for (int i = 0; i < 5; i++) {
-//        if (blueArmy[i] != nullptr) {
-//            cout << blueArmy[i]->getName() << endl;
-//        }
-//    }
-
 
     // Start game
 
@@ -359,7 +354,7 @@ int main() {
     int troopNoBlue = rand() % 5;
     int troopNoRed = rand() % 5;
 
-    generateMap(gameMap, bluePos, redPos);
+    generateMap(gameMap, bluePos, redPos, blueMana, redMana);
 
     // Randomly chooses a unit that is alive to fight
     //TODO:May need to change the data structure of gameMap or blueArmy and redArmy. Infinite loop here
@@ -393,6 +388,8 @@ int main() {
         return 0;
     }
 
+    
+
     while (shouldGameContinue(gameMap)) {
         if (teamTurn) {
 
@@ -402,7 +399,7 @@ int main() {
 
             // Action 1
             //TODO:Output the map here
-            generateMap(gameMap, bluePos, redPos);
+            generateMap(gameMap, bluePos, redPos, blueMana, redMana);
 
 //            cout << "Playing action now" << endl;
 
@@ -412,7 +409,7 @@ int main() {
 
             if (action1 == "rest") {
                 if (gameMap[bluePos][troopNoBlue]->getName() == "Hoplite") {
-                    blueMana += 45;
+                    blueMana += 60;
                 }
                 if (gameMap[bluePos][troopNoBlue]->getName() == "Trireme Oarsmen") {
                     blueMana += 30;
@@ -426,6 +423,20 @@ int main() {
             }
             else if (action1 == "attack") {
                 if (inRange(gameMap, bluePos)) {
+
+                    if (gameMap[bluePos][troopNoBlue]->getName() == "Hoplite" && blueMana < 40) {
+                        cout << "Don't have enough mana. End of action" << endl;
+                        break;
+                    }
+                    if (gameMap[bluePos][troopNoBlue]->getName() == "Trireme Oarsmen" && blueMana < 20) {
+                        cout << "Don't have enough mana. End of action" << endl;
+                        break;
+                    }
+                    if (gameMap[bluePos][troopNoBlue]->getName() == "Myrmidon" && blueMana < 10) {
+                        cout << "Don't have enough mana. End of action" << endl;
+                        break;
+                    }
+
                     gameMap[bluePos][troopNoBlue]->engage(gameMap[redPos][troopNoRed]);
 
                     if (gameMap[bluePos][troopNoBlue]->getHealth() <= 0) {
@@ -440,24 +451,60 @@ int main() {
                 }
             }
             else if (action1 == "move") {
-                cout << "Move left or right?\t(L | R)" << endl;
+                bool canLeft = true;
+                bool canRight = true;
 
-                string movement = "";
-                cin >> movement;
-
-                for (char& c: movement) {
-                    c = tolower(c);
+                if (bluePos < 1) {
+                    canLeft = false;
                 }
 
-                if (movement == "l" && bluePos > 0) {
+                if (bluePos > 3) {
+                    canRight = false;
+                }
+
+                if (canLeft && gameMap[bluePos - 1] != nullptr) {
+                    canLeft = false;
+                }
+
+                if (canRight && gameMap[bluePos + 1] != nullptr) {
+                    canRight = false;
+                }
+
+                if (canLeft && canRight) {
+                    cout << "Move left or right?\t(L | R)" << endl;
+
+                    string movement = "";
+                    cin >> movement;
+
+                    for (char& c: movement) {
+                        c = tolower(c);
+                    }
+
+                    if (movement == "l" && bluePos > 0) {
+                        gameMap[bluePos - 1] = gameMap[bluePos];
+                        gameMap[bluePos] = nullptr;
+                        bluePos--;
+                    }
+                    else if (movement == "r" && bluePos < 4) {
+                        gameMap[bluePos + 1] = gameMap[bluePos];
+                        gameMap[bluePos] = nullptr;
+                        bluePos++;
+                    }
+                }
+                else if (!canLeft && canRight) {
+                    cout << "Moved right" << endl;
+                    gameMap[bluePos + 1] = gameMap[bluePos];
+                    gameMap[bluePos] = nullptr;
+                    bluePos++;
+                }
+                else if (canLeft && canRight) {
+                    cout << "Moved left" << endl;
                     gameMap[bluePos - 1] = gameMap[bluePos];
                     gameMap[bluePos] = nullptr;
                     bluePos--;
                 }
-                else if (movement == "r" && bluePos < 4) {
-                    gameMap[bluePos + 1] = gameMap[bluePos];
-                    gameMap[bluePos] = nullptr;
-                    bluePos++;
+                else {
+                    cout << "Cannot move. End of turn" << endl;
                 }
             }
 
@@ -465,7 +512,7 @@ int main() {
 
             // Action 2
             //TODO:Output the map here
-            generateMap(gameMap, bluePos, redPos);
+            generateMap(gameMap, bluePos, redPos, blueMana, redMana);
 
             string action2 = getAction2(gameMap, bluePos, action1);
 
@@ -485,6 +532,19 @@ int main() {
             }
             else if (action2 == "attack") {
                 if (inRange(gameMap, bluePos)) {
+                    if (gameMap[bluePos][troopNoBlue]->getName() == "Hoplite" && blueMana < 40) {
+                        cout << "Don't have enough mana. End of action" << endl;
+                        break;
+                    }
+                    if (gameMap[bluePos][troopNoBlue]->getName() == "Trireme Oarsmen" && blueMana < 20) {
+                        cout << "Don't have enough mana. End of action" << endl;
+                        break;
+                    }
+                    if (gameMap[bluePos][troopNoBlue]->getName() == "Myrmidon" && blueMana < 10) {
+                        cout << "Don't have enough mana. End of action" << endl;
+                        break;
+                    }
+
                     gameMap[bluePos][troopNoBlue]->engage(gameMap[redPos][troopNoRed]);
 
                     if (gameMap[bluePos][troopNoBlue]->getHealth() <= 0) {
@@ -499,24 +559,60 @@ int main() {
                 }
             }
             else if (action2 == "move") {
-                cout << "Move left or right?\t(L | R)" << endl;
+                bool canLeft = true;
+                bool canRight = true;
 
-                string movement = "";
-                cin >> movement;
-
-                for (char& c: movement) {
-                    c = tolower(c);
+                if (bluePos < 1) {
+                    canLeft = false;
                 }
 
-                if (movement == "l" && bluePos > 0) {
+                if (bluePos > 3) {
+                    canRight = false;
+                }
+
+                if (canLeft && gameMap[bluePos - 1] != nullptr) {
+                    canLeft = false;
+                }
+
+                if (canRight && gameMap[bluePos + 1] != nullptr) {
+                    canRight = false;
+                }
+
+                if (canLeft && canRight) {
+                    cout << "Move left or right?\t(L | R)" << endl;
+
+                    string movement = "";
+                    cin >> movement;
+
+                    for (char& c: movement) {
+                        c = tolower(c);
+                    }
+
+                    if (movement == "l" && bluePos > 0) {
+                        gameMap[bluePos - 1] = gameMap[bluePos];
+                        gameMap[bluePos] = nullptr;
+                        bluePos--;
+                    }
+                    else if (movement == "r" && bluePos < 4) {
+                        gameMap[bluePos + 1] = gameMap[bluePos];
+                        gameMap[bluePos] = nullptr;
+                        bluePos++;
+                    }
+                }
+                else if (!canLeft && canRight) {
+                    cout << "Moved right" << endl;
+                    gameMap[bluePos + 1] = gameMap[bluePos];
+                    gameMap[bluePos] = nullptr;
+                    bluePos++;
+                }
+                else if (canLeft && canRight) {
+                    cout << "Moved left" << endl;
                     gameMap[bluePos - 1] = gameMap[bluePos];
                     gameMap[bluePos] = nullptr;
                     bluePos--;
                 }
-                else if (movement == "r" && bluePos < 4) {
-                    gameMap[bluePos + 1] = gameMap[bluePos];
-                    gameMap[bluePos] = nullptr;
-                    bluePos++;
+                else {
+                    cout << "Cannot move. End of turn" << endl;
                 }
             }
         }
@@ -529,7 +625,7 @@ int main() {
 
             // Action 1
             //TODO:Output the map here
-            generateMap(gameMap, bluePos, redPos);
+            generateMap(gameMap, bluePos, redPos, blueMana, redMana);
 
             string action1 = getAction1(gameMap, redPos);
 
@@ -549,6 +645,19 @@ int main() {
             }
             else if (action1 == "attack") {
                 if (inRange(gameMap, redPos)) {
+                    if (gameMap[bluePos][troopNoBlue]->getName() == "Legionary" && blueMana < 40) {
+                        cout << "Don't have enough mana. End of action" << endl;
+                        break;
+                    }
+                    if (gameMap[bluePos][troopNoBlue]->getName() == "Quinquereme Rowers" && blueMana < 20) {
+                        cout << "Don't have enough mana. End of action" << endl;
+                        break;
+                    }
+                    if (gameMap[bluePos][troopNoBlue]->getName() == "Praetorian Guard" && blueMana < 10) {
+                        cout << "Don't have enough mana. End of action" << endl;
+                        break;
+                    }
+
                     gameMap[redPos][troopNoRed]->engage(gameMap[bluePos][troopNoBlue]);
 
                     if (gameMap[bluePos][troopNoBlue]->getHealth() <= 0) {
@@ -563,24 +672,60 @@ int main() {
                 }
             }
             else if (action1 == "move") {
-                cout << "Move left or right?\t(L | R)" << endl;
+                bool canLeft = true;
+                bool canRight = true;
 
-                string movement = "";
-                cin >> movement;
-
-                for (char& c: movement) {
-                    c = tolower(c);
+                if (redPos < 1) {
+                    canLeft = false;
                 }
 
-                if (movement == "l" && redPos > 0) {
+                if (redPos > 3) {
+                    canRight = false;
+                }
+
+                if (canLeft && gameMap[redPos - 1] != nullptr) {
+                    canLeft = false;
+                }
+
+                if (canRight && gameMap[redPos + 1] != nullptr) {
+                    canRight = false;
+                }
+
+                if (canLeft && canRight) {
+                    cout << "Move left or right?\t(L | R)" << endl;
+
+                    string movement = "";
+                    cin >> movement;
+
+                    for (char& c: movement) {
+                        c = tolower(c);
+                    }
+
+                    if (movement == "l" && redPos > 0) {
+                        gameMap[redPos - 1] = gameMap[redPos];
+                        gameMap[redPos] = nullptr;
+                        redPos--;
+                    }
+                    else if (movement == "r" && redPos < 4) {
+                        gameMap[redPos + 1] = gameMap[redPos];
+                        gameMap[redPos] = nullptr;
+                        redPos++;
+                    }
+                }
+                else if (!canLeft && canRight) {
+                    cout << "Moved right" << endl;
+                    gameMap[redPos + 1] = gameMap[redPos];
+                    gameMap[redPos] = nullptr;
+                    redPos++;
+                }
+                else if (canLeft && canRight) {
+                    cout << "Moved left" << endl;
                     gameMap[redPos - 1] = gameMap[redPos];
                     gameMap[redPos] = nullptr;
                     redPos--;
                 }
-                else if (movement == "r" && redPos < 4) {
-                    gameMap[redPos + 1] = gameMap[redPos];
-                    gameMap[redPos] = nullptr;
-                    redPos++;
+                else {
+                    cout << "Cannot move. End of turn" << endl;
                 }
             }
 
@@ -588,7 +733,7 @@ int main() {
 
             // Action 2
             //TODO:Output the map here
-            generateMap(gameMap, bluePos, redPos);
+            generateMap(gameMap, bluePos, redPos, blueMana, redMana);
 
             string action2 = getAction2(gameMap, redPos, action1);
 
@@ -608,6 +753,19 @@ int main() {
             }
             else if (action2 == "attack") {
                 if (inRange(gameMap, redPos)) {
+                    if (gameMap[bluePos][troopNoBlue]->getName() == "Legionary" && blueMana < 40) {
+                        cout << "Don't have enough mana. End of action" << endl;
+                        break;
+                    }
+                    if (gameMap[bluePos][troopNoBlue]->getName() == "Quinquereme Rowers" && blueMana < 20) {
+                        cout << "Don't have enough mana. End of action" << endl;
+                        break;
+                    }
+                    if (gameMap[bluePos][troopNoBlue]->getName() == "Praetorian Guard" && blueMana < 10) {
+                        cout << "Don't have enough mana. End of action" << endl;
+                        break;
+                    }
+
                     gameMap[redPos][troopNoRed]->engage(gameMap[bluePos][troopNoBlue]);
 
                     if (gameMap[bluePos][troopNoBlue]->getHealth() <= 0) {
@@ -622,24 +780,60 @@ int main() {
                 }
             }
             else if (action2 == "move") {
-                cout << "Move left or right?\t(L | R)" << endl;
+                bool canLeft = true;
+                bool canRight = true;
 
-                string movement = "";
-                cin >> movement;
-
-                for (char& c: movement) {
-                    c = tolower(c);
+                if (redPos < 1) {
+                    canLeft = false;
                 }
 
-                if (movement == "l" && redPos > 0) {
-                    gameMap[redPos - 1] = gameMap[redPos];
-                    gameMap[redPos] = nullptr;
-                    bluePos--;
+                if (redPos > 3) {
+                    canRight = false;
                 }
-                else if (movement == "r" && redPos < 4) {
+
+                if (canLeft && gameMap[redPos - 1] != nullptr) {
+                    canLeft = false;
+                }
+
+                if (canRight && gameMap[redPos + 1] != nullptr) {
+                    canRight = false;
+                }
+
+                if (canLeft && canRight) {
+                    cout << "Move left or right?\t(L | R)" << endl;
+
+                    string movement = "";
+                    cin >> movement;
+
+                    for (char& c: movement) {
+                        c = tolower(c);
+                    }
+
+                    if (movement == "l" && redPos > 0) {
+                        gameMap[redPos - 1] = gameMap[redPos];
+                        gameMap[redPos] = nullptr;
+                        redPos--;
+                    }
+                    else if (movement == "r" && redPos < 4) {
+                        gameMap[redPos + 1] = gameMap[redPos];
+                        gameMap[redPos] = nullptr;
+                        redPos++;
+                    }
+                }
+                else if (!canLeft && canRight) {
+                    cout << "Moved right" << endl;
                     gameMap[redPos + 1] = gameMap[redPos];
                     gameMap[redPos] = nullptr;
                     redPos++;
+                }
+                else if (canLeft && canRight) {
+                    cout << "Moved left" << endl;
+                    gameMap[redPos - 1] = gameMap[redPos];
+                    gameMap[redPos] = nullptr;
+                    redPos--;
+                }
+                else {
+                    cout << "Cannot move. End of turn" << endl;
                 }
             }
         }
