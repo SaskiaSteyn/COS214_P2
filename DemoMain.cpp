@@ -23,23 +23,27 @@ void setBlueArmy(InfantryFactory &blueInfantryFactory, BoatmanFactory &blueBoatm
 
     string unitType = "";
 
-    while (unitType != "infantry" || unitType != "boatman" || unitType != "shieldbearer") {
+    while ((unitType != "infantry") && (unitType != "boatman") && (unitType != "shieldbearer")) {
+        //TODO: this ism't working. There is no tolerance
+        for (char& c: unitType) {
+            c = tolower(c);
+        }
+
         cout << "Choose a type of unit to add:\t(Infantry | ShieldBearer | Boatman)" << endl;
 
         cin >> unitType;
         cout << unitType << endl;
 
-        for (char& c: unitType) {
-            c = tolower(c);
-        }
 
-        if (unitType != "infantry" || unitType != "boatman" || unitType != "shieldbearer") {
-            cout << "Please insert one of the following unit names" << endl;
-        }
+
+//        if ((unitType != "infantry") || (unitType != "boatman") || (unitType != "shieldbearer")) {
+//            cout << "Please insert one of the following unit names" << endl;
+//        }
     }
 
     cout << "How many " << unitType << " units do you want: ";
 
+    //TODO: error handling when units go less than amount left
     int numUnits = 0;
     cin >> numUnits;
 
@@ -65,7 +69,7 @@ void setRedArmy(InfantryFactory &redInfantryFactory, BoatmanFactory &redBoatmanF
 
     string unitType = "";
 
-    while (unitType != "infantry" || unitType != "boatman" || unitType != "shieldbearer") {
+    while (unitType != "infantry" && unitType != "boatman" && unitType != "shieldbearer") {
         cout << "Choose a type of units to add:\t(Infantry | ShieldBearer | Boatman)" << endl;
 
 
@@ -78,6 +82,7 @@ void setRedArmy(InfantryFactory &redInfantryFactory, BoatmanFactory &redBoatmanF
 
     cout << "How many " << unitType << " units do you want: ";
 
+    //TODO: it's not printing the amount left
     int numUnits = 0;
     cin >> numUnits;
 
