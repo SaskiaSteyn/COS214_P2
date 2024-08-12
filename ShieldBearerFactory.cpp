@@ -15,7 +15,7 @@ int ShieldBearerFactory::calculateTotalDamagePerUnit() {
 }
 
 int ShieldBearerFactory::calculateTotalDefencePerUnit() {
-    return 0;
+    return getSoldier()->getDefence() * getSoldier()->getAmt();
 }
 
 
