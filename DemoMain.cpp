@@ -15,7 +15,7 @@
 
 using namespace std;
 
-void setBlueArmy(InfantryFactory &blueInfantryFactory, BoatmanFactory &blueBoatmanFactory, ShieldBearerFactory &blueShieldBearerFactory, int &blueUnits, Soldiers** blueArmy) {
+Soldiers** setBlueArmy(InfantryFactory &blueInfantryFactory, BoatmanFactory &blueBoatmanFactory, ShieldBearerFactory &blueShieldBearerFactory, int &blueUnits, Soldiers** blueArmy) {
     cout << "Blue Army" << endl;
     cout << "--------------------------" << endl;
 
@@ -86,10 +86,10 @@ void setBlueArmy(InfantryFactory &blueInfantryFactory, BoatmanFactory &blueBoatm
         blueUnits -= numUnits;
     }
 
-
+    return blueArmy;
 }
 
-void setRedArmy(InfantryFactory &redInfantryFactory, BoatmanFactory &redBoatmanFactory, ShieldBearerFactory &redShieldBearerFactory, int &redUnits, Soldiers** redArmy) {
+Soldiers** setRedArmy(InfantryFactory &redInfantryFactory, BoatmanFactory &redBoatmanFactory, ShieldBearerFactory &redShieldBearerFactory, int &redUnits, Soldiers** redArmy) {
     cout << "Red Army" << endl;
     cout << "--------------------------" << endl;
 
@@ -161,7 +161,7 @@ void setRedArmy(InfantryFactory &redInfantryFactory, BoatmanFactory &redBoatmanF
         redUnits -= numUnits;
     }
 
-
+    return redArmy;
 }
 
 bool shouldGameContinue(Soldiers*** gameMap) {
@@ -331,16 +331,16 @@ int main() {
     int blueUnits = 100;
     int redUnits = 100;
 
-    cout << "Done making the armies" << endl;
+//    cout << "Done making the armies" << endl;
 
-    Soldiers** blueArmy = new Soldiers*[5];
-    Soldiers** redArmy = new Soldiers*[5];
+//    Soldiers** blueArmy = new Soldiers*[5];
+//    Soldiers** redArmy = new Soldiers*[5];
 
-    setBlueArmy(blueInfantryFactory, blueBoatmanFactory, blueShieldBearerFactory, blueUnits, blueArmy);
+    Soldiers** blueArmy = setBlueArmy(blueInfantryFactory, blueBoatmanFactory, blueShieldBearerFactory, blueUnits, new Soldiers*[5]);
 
     cout << "==============================" << endl;
 
-    setRedArmy(redInfantryFactory, redBoatmanFactory, redShieldBearerFactory, redUnits, redArmy);
+    Soldiers** redArmy = setRedArmy(redInfantryFactory, redBoatmanFactory, redShieldBearerFactory, redUnits, new Soldiers*[5]);
 
     int blueMana = 100;
     int redMana = 100;
