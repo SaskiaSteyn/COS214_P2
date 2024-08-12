@@ -29,7 +29,7 @@ void Infantry::execute(Soldiers * attacker) {
     this->gunLoaded = true;
     cout << this->unitName << " has raised their weapon" << endl;
 
-    int tempDamage = this->enemy->dealDamage(this->getDamage(), attacker`);
+    int tempDamage = this->enemy->dealDamage(this->getDamage(), attacker);
     totalDamageCaused += tempDamage;
 }
 
