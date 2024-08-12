@@ -15,93 +15,152 @@
 
 using namespace std;
 
-void setBlueArmy(InfantryFactory &blueInfantryFactory, BoatmanFactory &blueBoatmanFactory, ShieldBearerFactory &blueShieldBearerFactory, int &blueUnits, Soldiers* blueArmy[], int index) {
+void setBlueArmy(InfantryFactory &blueInfantryFactory, BoatmanFactory &blueBoatmanFactory, ShieldBearerFactory &blueShieldBearerFactory, int &blueUnits, Soldiers* blueArmy[]) {
     cout << "Blue Army" << endl;
     cout << "--------------------------" << endl;
 
-    cout << "You have " << blueUnits << " units remaining" << endl;
+    bool indeces[5];
+    for (int i = 0; i < 5; i++) {
+        indeces[i] = false;
+    }
 
-    string unitType = "";
+    while (blueUnits != 0) {
 
-    while ((unitType != "infantry") && (unitType != "boatman") && (unitType != "shieldbearer")) {
-
-        cout << "Choose a type of unit to add:\t(Infantry | ShieldBearer | Boatman)" << endl;
-
-        cin >> unitType;
-        cout << unitType << endl;
-
-        for (char& c: unitType) {
-            c = tolower(c);
+        int index = rand() % 5;
+        while (indeces[index]) {
+            index = rand() % 5;
         }
 
-        if ((unitType != "infantry") && (unitType != "boatman") && (unitType != "shieldbearer")) {
-            cout << "Please insert one of the following unit names" << endl;
+        indeces[index] = true;
+
+        cout << "You have " << blueUnits << " units remaining" << endl;
+
+        string unitType = "";
+
+        while ((unitType != "infantry") && (unitType != "boatman") && (unitType != "shieldbearer")) {
+
+            cout << "Choose a type of unit to add:\t(Infantry | ShieldBearer | Boatman)" << endl;
+
+            cin >> unitType;
+//            cout << unitType << endl;
+
+            for (char& c: unitType) {
+                c = tolower(c);
+            }
+
+            if ((unitType != "infantry") && (unitType != "boatman") && (unitType != "shieldbearer")) {
+                cout << "Please insert one of the following unit names" << endl;
+            }
         }
+
+        int numUnits = 0;
+
+        while (numUnits < 1 || numUnits > blueUnits) {
+            cout << "How many " << unitType << " units do you want: ";
+
+            cin >> numUnits;
+
+            if (blueUnits - numUnits < 0) {
+                cout << "Not enough units" << endl;
+            }
+            if (numUnits < 1) {
+                cout << "Please enter a positive number" << endl;
+            }
+        }
+
+
+
+        if (unitType == "infantry") {
+            blueArmy[index] = blueInfantryFactory.createUnit();
+            blueArmy[index]->setAmount(numUnits);
+        }
+        else if (unitType == "shieldbearer") {
+            blueArmy[index] = blueShieldBearerFactory.createUnit();
+            blueArmy[index]->setAmount(numUnits);
+        }
+        else {
+            blueArmy[index] = blueBoatmanFactory.createUnit();
+            blueArmy[index]->setAmount(numUnits);
+        }
+
+        blueUnits -= numUnits;
     }
 
-    cout << "How many " << unitType << " units do you want: ";
 
-    //TODO: error handling when units go less than amount left
-    int numUnits = 0;
-    cin >> numUnits;
-
-    if (unitType == "infantry") {
-        blueArmy[index] = blueInfantryFactory.createUnit();
-        blueArmy[index]->setAmount(numUnits);
-    }
-    else if (unitType == "shieldbearer") {
-        blueArmy[index] = blueShieldBearerFactory.createUnit();
-        blueArmy[index]->setAmount(numUnits);
-    }
-    else {
-        blueArmy[index] = blueBoatmanFactory.createUnit();
-        blueArmy[index]->setAmount(numUnits);
-    }
-
-    blueUnits -= numUnits;
 }
 
-void setRedArmy(InfantryFactory &redInfantryFactory, BoatmanFactory &redBoatmanFactory, ShieldBearerFactory &redShieldBearerFactory, int &redUnits, Soldiers* redArmy[], int index) {
+void setRedArmy(InfantryFactory &redInfantryFactory, BoatmanFactory &redBoatmanFactory, ShieldBearerFactory &redShieldBearerFactory, int &redUnits, Soldiers* redArmy[]) {
     cout << "Red Army" << endl;
     cout << "--------------------------" << endl;
 
-    string unitType = "";
+    bool indeces[5];
+    for (int i = 0; i < 5; i++) {
+        indeces[i] = false;
+    }
 
-    while (unitType != "infantry" && unitType != "boatman" && unitType != "shieldbearer") {
-        cout << "Choose a type of units to add:\t(Infantry | ShieldBearer | Boatman)" << endl;
+    while (redUnits != 0) {
 
-
-        cin >> unitType;
-
-        for (char& c: unitType) {
-            c = tolower(c);
+        int index = rand() % 5;
+        while (indeces[index]) {
+            index = rand() % 5;
         }
 
-        if ((unitType != "infantry") && (unitType != "boatman") && (unitType != "shieldbearer")) {
-            cout << "Please insert one of the following unit names" << endl;
+        indeces[index] = true;
+
+        cout << "You have " << redUnits << " units remaining" << endl;
+
+        string unitType = "";
+
+        while ((unitType != "infantry") && (unitType != "boatman") && (unitType != "shieldbearer")) {
+
+            cout << "Choose a type of unit to add:\t(Infantry | ShieldBearer | Boatman)" << endl;
+
+            cin >> unitType;
+            cout << unitType << endl;
+
+            for (char& c: unitType) {
+                c = tolower(c);
+            }
+
+            if ((unitType != "infantry") && (unitType != "boatman") && (unitType != "shieldbearer")) {
+                cout << "Please insert one of the following unit names" << endl;
+            }
         }
+
+        int numUnits = 0;
+
+        while (numUnits < 1 || numUnits > redUnits) {
+            cout << "How many " << unitType << " units do you want: ";
+
+            cin >> numUnits;
+
+            if (redUnits - numUnits < 0) {
+                cout << "Not enough units" << endl;
+            }
+            if (numUnits < 1) {
+                cout << "Please enter a positive number" << endl;
+            }
+        }
+
+
+
+        if (unitType == "infantry") {
+            redArmy[index] = redInfantryFactory.createUnit();
+            redArmy[index]->setAmount(numUnits);
+        }
+        else if (unitType == "shieldbearer") {
+            redArmy[index] = redShieldBearerFactory.createUnit();
+            redArmy[index]->setAmount(numUnits);
+        }
+        else {
+            redArmy[index] = redBoatmanFactory.createUnit();
+            redArmy[index]->setAmount(numUnits);
+        }
+
+        redUnits -= numUnits;
     }
 
-    cout << "How many " << unitType << " units do you want: ";
 
-    //TODO: it's not printing the amount left
-    int numUnits = 0;
-    cin >> numUnits;
-
-    if (unitType == "infantry") {
-        redArmy[index] = redInfantryFactory.createUnit();
-        redArmy[index]->setAmount(numUnits);
-    }
-    else if (unitType == "shieldbearer") {
-        redArmy[index] = redShieldBearerFactory.createUnit();
-        redArmy[index]->setAmount(numUnits);
-    }
-    else {
-        redArmy[index] = redBoatmanFactory.createUnit();
-        redArmy[index]->setAmount(numUnits);
-    }
-
-    redUnits -= numUnits;
 }
 
 bool shouldGameContinue(Soldiers** gameMap) {
@@ -190,7 +249,65 @@ bool hasHealth(Soldiers*army[], int index) {
     return false;
 }
 
+void generateMap(Soldiers* gameMap[], Soldiers* blueArmy[]) {
+
+//    const string RESET = "\033[0m";
+//    const string RED = "\033[31m";
+//    const string GREEN = "\033[32m";
+//    const string YELLOW = "\033[33m";
+//    const string BLUE = "\033[34m";
+//    const string MAGENTA = "\033[35m";
+//    const string CYAN = "\033[36m";
+//    cout << "\033[33m" << "=================" << "\033[0m" << endl;
+
+//    cout << YELLOW << "| " << RESET;
+//
+//    for (int i = 0; i < 5; i++) {
+//        if (gameMap[i] == nullptr) {
+//            cout << "  ";
+//        }
+//        else if (gameMap[i] == *blueArmy){
+//            cout << " " << BLUE << "X" << RESET;
+//        }
+//        else {
+//            cout << " " << RED << "X" << RESET;
+//        }
+//    }
+//
+//    cout << YELLOW << " |" << RESET << endl;
+//
+//    cout << YELLOW << "=================" << RESET << endl;
+
+    cout << endl << "================" << endl;
+
+    cout << "| ";
+
+    for (int i = 0; i < 5; i++) {
+        if (gameMap[i] == nullptr) {
+            cout << "  ";
+        }
+        else if (gameMap[i] == *blueArmy){
+            cout << " " << "B ";
+        }
+        else {
+            cout << " " << "R ";
+        }
+    }
+
+    cout << " |" << endl;
+
+    cout << "================" << endl;
+}
+
 int main() {
+
+//    const string RESET = "\033[0m";
+//    const string RED = "\033[31m";
+//    const string GREEN = "\033[32m";
+//    const string YELLOW = "\033[33m";
+//    const string BLUE = "\033[34m";
+//    const string MAGENTA = "\033[35m";
+//    const string CYAN = "\033[36m";
 
     Infantry *blueInfantry = new Infantry(200, 40, 0, 12, 50, "Hoplite");
     Boatman *blueBoatman = new Boatman(200, 30, 0, 12, 50, "Trireme Oarsmen");
@@ -215,36 +332,11 @@ int main() {
     Soldiers* blueArmy[5];
     Soldiers* redArmy[5];
 
-    bool indeces[5];
-    for (int i = 0; i < 5; i++) {
-        indeces[i] = false;
-    }
-
-    while (blueUnits != 0) {
-
-        int randomNumber = rand() % 5;
-        while (indeces[randomNumber]) {
-            randomNumber = rand() % 5;
-        }
-
-        setBlueArmy(blueInfantryFactory, blueBoatmanFactory, blueShieldBearerFactory, blueUnits, blueArmy, randomNumber);
-    }
+    setBlueArmy(blueInfantryFactory, blueBoatmanFactory, blueShieldBearerFactory, blueUnits, blueArmy);
 
     cout << "==============================" << endl;
 
-    for (int i = 0; i < 5; i++) {
-        indeces[i] = false;
-    }
-
-    while (redUnits != 0) {
-
-        int randomNumber = rand() % 5;
-        while (indeces[randomNumber]) {
-            randomNumber = rand() % 5;
-        }
-
-        setRedArmy(redInfantryFactory, redBoatmanFactory, redShieldBearerFactory, redUnits, redArmy, randomNumber);
-    }
+    setRedArmy(redInfantryFactory, redBoatmanFactory, redShieldBearerFactory, redUnits, redArmy);
 
     int blueMana = 100;
     int redMana = 100;
@@ -257,6 +349,14 @@ int main() {
     gameMap[3] = *redArmy;
     gameMap[4] = nullptr;
 
+    for (int i = 0; i < 5; i++) {
+        if (blueArmy[i] != nullptr) {
+            cout << blueArmy[i]->getName() << endl;
+        }
+    }
+
+    generateMap(gameMap, blueArmy);
+
     // Start game
 
     bool teamTurn = true;
@@ -266,10 +366,16 @@ int main() {
     int troopNoBlue = rand() % 5;
     int troopNoRed = rand() % 5;
 
+    // Randomly chooses a unit that is alive to fight
+    //TODO:May need to change the data structure of gameMap or blueArmy and redArmy. Infinite loop here
     if (hasHealth(gameMap, bluePos)) {
+        cout << "generating an index" << endl;
+
         while (gameMap[bluePos][troopNoBlue].getHealth() <= 0) {
             troopNoBlue = rand() % 5;
         }
+
+        cout << "generated an index" << endl;
     }
     else {
         cout << "Blue Team is defeated. Red team wins!" << endl;
@@ -286,12 +392,12 @@ int main() {
         return 0;
     }
 
-
     while (shouldGameContinue(gameMap)) {
         if (teamTurn) {
 
             // Action 1
             //TODO:Output the map here
+
 
             string action1 = getAction1(gameMap, bluePos);
 
