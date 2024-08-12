@@ -15,7 +15,7 @@
 
 using namespace std;
 
-void setBlueArmy(InfantryFactory &blueInfantryFactory, BoatmanFactory &blueBoatmanFactory, ShieldBearerFactory &blueShieldBearerFactory, int &blueUnits, Soldiers* blueArmy[]) {
+void setBlueArmy(InfantryFactory &blueInfantryFactory, BoatmanFactory &blueBoatmanFactory, ShieldBearerFactory &blueShieldBearerFactory, int &blueUnits, Soldiers** blueArmy) {
     cout << "Blue Army" << endl;
     cout << "--------------------------" << endl;
 
@@ -89,7 +89,7 @@ void setBlueArmy(InfantryFactory &blueInfantryFactory, BoatmanFactory &blueBoatm
 
 }
 
-void setRedArmy(InfantryFactory &redInfantryFactory, BoatmanFactory &redBoatmanFactory, ShieldBearerFactory &redShieldBearerFactory, int &redUnits, Soldiers* redArmy[]) {
+void setRedArmy(InfantryFactory &redInfantryFactory, BoatmanFactory &redBoatmanFactory, ShieldBearerFactory &redShieldBearerFactory, int &redUnits, Soldiers** redArmy) {
     cout << "Red Army" << endl;
     cout << "--------------------------" << endl;
 
@@ -164,7 +164,7 @@ void setRedArmy(InfantryFactory &redInfantryFactory, BoatmanFactory &redBoatmanF
 
 }
 
-bool shouldGameContinue(Soldiers** gameMap) {
+bool shouldGameContinue(Soldiers*** gameMap) {
 
     int alive = 0;
 
@@ -177,7 +177,7 @@ bool shouldGameContinue(Soldiers** gameMap) {
     return alive == 2;
 }
 
-bool inRange(Soldiers** gameMap, int myPos) {
+bool inRange(Soldiers*** gameMap, int myPos) {
     for (int i = 0; i < 5; i++) {
         // If enemy is adjacent to me
         if (gameMap[i] != nullptr && i != myPos && (myPos - i == 1 || myPos - i == -1)) {
@@ -188,7 +188,7 @@ bool inRange(Soldiers** gameMap, int myPos) {
     return false;
 }
 
-string getAction1(Soldiers** gameMap, int myPos) {
+string getAction1(Soldiers*** gameMap, int myPos) {
     cout << "In the getAction function" << endl;
     cout << "Action 1:" << endl;
 
@@ -214,7 +214,7 @@ string getAction1(Soldiers** gameMap, int myPos) {
     return action;
 }
 
-string getAction2(Soldiers** gameMap, int myPos, string prevMove) {
+string getAction2(Soldiers*** gameMap, int myPos, string prevMove) {
     cout << "Action 2:" << endl;
     string action = "";
 
@@ -241,9 +241,9 @@ string getAction2(Soldiers** gameMap, int myPos, string prevMove) {
     return action;
 }
 
-bool hasHealth(Soldiers*army[], int index) {
+bool hasHealth(Soldiers***gameMap, int teamPos) {
     for (int i = 0; i < 5; i++) {
-        if (army[i] != nullptr && army[i]->getHealth() > 0) {
+        if (gameMap[teamPos][i] != nullptr && gameMap[teamPos][i]->getHealth() > 0) {
             return true;
         }
     }
@@ -251,7 +251,7 @@ bool hasHealth(Soldiers*army[], int index) {
     return false;
 }
 
-void generateMap(Soldiers* gameMap[], Soldiers* blueArmy[]) {
+void generateMap(Soldiers*** gameMap, Soldiers** blueArmy) {
 
 //    const string RESET = "\033[0m";
 //    const string RED = "\033[31m";
@@ -288,7 +288,7 @@ void generateMap(Soldiers* gameMap[], Soldiers* blueArmy[]) {
         if (gameMap[i] == nullptr) {
             cout << "  ";
         }
-        else if (gameMap[i] == *blueArmy){
+        else if (gameMap[i] == blueArmy){
             cout << " " << "B ";
         }
         else {
@@ -333,8 +333,8 @@ int main() {
 
     cout << "Done making the armies" << endl;
 
-    Soldiers* blueArmy[5];
-    Soldiers* redArmy[5];
+    Soldiers** blueArmy = new Soldiers*[5];
+    Soldiers** redArmy = new Soldiers*[5];
 
     setBlueArmy(blueInfantryFactory, blueBoatmanFactory, blueShieldBearerFactory, blueUnits, blueArmy);
 
@@ -345,15 +345,18 @@ int main() {
     int blueMana = 100;
     int redMana = 100;
 
-    Soldiers* gameMap[5];
+    Soldiers*** gameMap = new Soldiers ** [5];
 
     gameMap[0] = nullptr;
-    gameMap[1] = *blueArmy;
+    gameMap[1] = blueArmy;
     gameMap[2] = nullptr;
-    gameMap[3] = *redArmy;
+    gameMap[3] = redArmy;
     gameMap[4] = nullptr;
 
     cout << "Starting to create the map. Before the for loop to print out the soldiers" << endl;
+
+    cout << gameMap[1][0]->getName() << endl;
+
     //TODO: this has a bad access. Error message: EXC_BAD_ACCESS (code=1, address=0x30)
     for (int i = 0; i < 5; i++) {
         if (blueArmy[i] != nullptr) {
@@ -377,7 +380,7 @@ int main() {
     if (hasHealth(gameMap, bluePos)) {
         cout << "generating an index" << endl;
 
-        while (gameMap[bluePos][troopNoBlue].getHealth() <= 0) {
+        while (gameMap[bluePos][troopNoBlue]->getHealth() <= 0) {
             troopNoBlue = rand() % 5;
         }
 
@@ -389,7 +392,7 @@ int main() {
     }
 
     if (hasHealth(gameMap, redPos)) {
-        while (gameMap[redPos][troopNoBlue].getHealth() <= 0) {
+        while (gameMap[redPos][troopNoBlue]->getHealth() <= 0) {
             troopNoRed = rand() % 5;
         }
     }
@@ -408,13 +411,13 @@ int main() {
             string action1 = getAction1(gameMap, bluePos);
 
             if (action1 == "rest") {
-                if (gameMap[bluePos][troopNoBlue].getName() == "Hoplite") {
+                if (gameMap[bluePos][troopNoBlue]->getName() == "Hoplite") {
                     blueMana += 45;
                 }
-                if (gameMap[bluePos][troopNoBlue].getName() == "Trireme Oarsmen") {
+                if (gameMap[bluePos][troopNoBlue]->getName() == "Trireme Oarsmen") {
                     blueMana += 30;
                 }
-                if (gameMap[bluePos][troopNoBlue].getName() == "Myrmidon") {
+                if (gameMap[bluePos][troopNoBlue]->getName() == "Myrmidon") {
                     blueMana += 15;
                 }
                 if (blueMana >= 100) {
@@ -423,13 +426,13 @@ int main() {
             }
             else if (action1 == "attack") {
                 if (inRange(gameMap, bluePos)) {
-                    gameMap[bluePos][troopNoBlue].engage(&gameMap[redPos][troopNoRed]);
+                    gameMap[bluePos][troopNoBlue]->engage(gameMap[redPos][troopNoRed]);
 
-                    if (gameMap[bluePos][troopNoBlue].getHealth() <= 0) {
-                        gameMap[bluePos][troopNoBlue].setAmount(0);
+                    if (gameMap[bluePos][troopNoBlue]->getHealth() <= 0) {
+                        gameMap[bluePos][troopNoBlue]->setAmount(0);
                     }
-                    if (gameMap[redPos][troopNoRed].getHealth() <= 0) {
-                        gameMap[redPos][troopNoRed].setAmount(0);
+                    if (gameMap[redPos][troopNoRed]->getHealth() <= 0) {
+                        gameMap[redPos][troopNoRed]->setAmount(0);
                     }
                 }
                 else {
@@ -466,13 +469,13 @@ int main() {
             string action2 = getAction2(gameMap, bluePos, action1);
 
             if (action2 == "rest") {
-                if (gameMap[bluePos][troopNoBlue].getName() == "Hoplite") {
+                if (gameMap[bluePos][troopNoBlue]->getName() == "Hoplite") {
                     blueMana += 30;
                 }
-                if (gameMap[bluePos][troopNoBlue].getName() == "Trireme Oarsmen") {
+                if (gameMap[bluePos][troopNoBlue]->getName() == "Trireme Oarsmen") {
                     blueMana += 20;
                 }
-                if (gameMap[bluePos][troopNoBlue].getName() == "Myrmidon") {
+                if (gameMap[bluePos][troopNoBlue]->getName() == "Myrmidon") {
                     blueMana += 10;
                 }
                 if (blueMana >= 100) {
@@ -481,13 +484,13 @@ int main() {
             }
             else if (action2 == "attack") {
                 if (inRange(gameMap, bluePos)) {
-                    gameMap[bluePos][troopNoBlue].engage(&gameMap[redPos][troopNoRed]);
+                    gameMap[bluePos][troopNoBlue]->engage(gameMap[redPos][troopNoRed]);
 
-                    if (gameMap[bluePos][troopNoBlue].getHealth() <= 0) {
-                        gameMap[bluePos][troopNoBlue].setAmount(0);
+                    if (gameMap[bluePos][troopNoBlue]->getHealth() <= 0) {
+                        gameMap[bluePos][troopNoBlue]->setAmount(0);
                     }
-                    if (gameMap[redPos][troopNoRed].getHealth() <= 0) {
-                        gameMap[redPos][troopNoRed].setAmount(0);
+                    if (gameMap[redPos][troopNoRed]->getHealth() <= 0) {
+                        gameMap[redPos][troopNoRed]->setAmount(0);
                     }
                 }
                 else {
@@ -525,13 +528,13 @@ int main() {
             string action1 = getAction1(gameMap, redPos);
 
             if (action1 == "rest") {
-                if (gameMap[redPos][troopNoRed].getName() == "Legionary") {
+                if (gameMap[redPos][troopNoRed]->getName() == "Legionary") {
                     redMana += 45;
                 }
-                if (gameMap[redPos][troopNoRed].getName() == "Quinquereme Rowers") {
+                if (gameMap[redPos][troopNoRed]->getName() == "Quinquereme Rowers") {
                     redMana += 30;
                 }
-                if (gameMap[redPos][troopNoRed].getName() == "Praetorian Guard") {
+                if (gameMap[redPos][troopNoRed]->getName() == "Praetorian Guard") {
                     redMana += 15;
                 }
                 if (redMana >= 100) {
@@ -540,13 +543,13 @@ int main() {
             }
             else if (action1 == "attack") {
                 if (inRange(gameMap, redPos)) {
-                    gameMap[redPos][troopNoRed].engage(&gameMap[bluePos][troopNoBlue]);
+                    gameMap[redPos][troopNoRed]->engage(gameMap[bluePos][troopNoBlue]);
 
-                    if (gameMap[bluePos][troopNoBlue].getHealth() <= 0) {
-                        gameMap[bluePos][troopNoBlue].setAmount(0);
+                    if (gameMap[bluePos][troopNoBlue]->getHealth() <= 0) {
+                        gameMap[bluePos][troopNoBlue]->setAmount(0);
                     }
-                    if (gameMap[redPos][troopNoRed].getHealth() <= 0) {
-                        gameMap[redPos][troopNoRed].setAmount(0);
+                    if (gameMap[redPos][troopNoRed]->getHealth() <= 0) {
+                        gameMap[redPos][troopNoRed]->setAmount(0);
                     }
                 }
                 else {
@@ -583,13 +586,13 @@ int main() {
             string action2 = getAction2(gameMap, redPos, action1);
 
             if (action2 == "rest") {
-                if (gameMap[redPos][troopNoRed].getName() == "Legionary") {
+                if (gameMap[redPos][troopNoRed]->getName() == "Legionary") {
                     redMana += 30;
                 }
-                if (gameMap[redPos][troopNoRed].getName() == "Quinquereme Rowers") {
+                if (gameMap[redPos][troopNoRed]->getName() == "Quinquereme Rowers") {
                     redMana += 20;
                 }
-                if (gameMap[redPos][troopNoRed].getName() == "Praetorian Guard") {
+                if (gameMap[redPos][troopNoRed]->getName() == "Praetorian Guard") {
                     redMana += 10;
                 }
                 if (redMana >= 100) {
@@ -598,13 +601,13 @@ int main() {
             }
             else if (action2 == "attack") {
                 if (inRange(gameMap, redPos)) {
-                    gameMap[redPos][troopNoRed].engage(&gameMap[bluePos][troopNoBlue]);
+                    gameMap[redPos][troopNoRed]->engage(gameMap[bluePos][troopNoBlue]);
 
-                    if (gameMap[bluePos][troopNoBlue].getHealth() <= 0) {
-                        gameMap[bluePos][troopNoBlue].setAmount(0);
+                    if (gameMap[bluePos][troopNoBlue]->getHealth() <= 0) {
+                        gameMap[bluePos][troopNoBlue]->setAmount(0);
                     }
-                    if (gameMap[redPos][troopNoRed].getHealth() <= 0) {
-                        gameMap[redPos][troopNoRed].setAmount(0);
+                    if (gameMap[redPos][troopNoRed]->getHealth() <= 0) {
+                        gameMap[redPos][troopNoRed]->setAmount(0);
                     }
                 }
                 else {
@@ -637,7 +640,7 @@ int main() {
         teamTurn = !teamTurn;
 
         if (hasHealth(gameMap, bluePos)) {
-            while (gameMap[bluePos][troopNoBlue].getHealth() <= 0) {
+            while (gameMap[bluePos][troopNoBlue]->getHealth() <= 0) {
                 troopNoBlue = rand() % 5;
             }
         }
@@ -647,7 +650,7 @@ int main() {
         }
 
         if (hasHealth(gameMap, redPos)) {
-            while (gameMap[redPos][troopNoBlue].getHealth() <= 0) {
+            while (gameMap[redPos][troopNoBlue]->getHealth() <= 0) {
                 troopNoRed = rand() % 5;
             }
         }
