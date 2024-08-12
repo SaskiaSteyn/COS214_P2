@@ -336,11 +336,21 @@ int main() {
     gameMap[4] = nullptr;
 
     for (int i = 0; i < 5; i++) {
-        gameMap[1][i] = blueArmy[i];
-        gameMap[3][i] = redArmy[i];
-    }
+        if (blueArmy[i] != nullptr) {
+            gameMap[1][i] = blueArmy[i];
+        }
+        else {
+            gameMap[1][i] = nullptr;
+        }
+        if (redArmy[i] != nullptr) {
+            gameMap[3][i] = redArmy[i];
+        }
+        else {
+            gameMap[3][i] = nullptr;
+        }
 
-    cout << "Starting to create the map. Before the for loop to print out the soldiers" << endl;
+    }
+    
 
 
     //TODO: this has a bad access. Error message: EXC_BAD_ACCESS (code=1, address=0x30)
@@ -365,13 +375,9 @@ int main() {
 
 
     if (hasHealth(gameMap, bluePos)) {
-//        cout << "generating an index" << endl;
-
-        while (gameMap[bluePos][troopNoBlue]->getHealth() <= 0) {
+        while (gameMap[bluePos][troopNoBlue] != nullptr && gameMap[bluePos][troopNoBlue]->getHealth() <= 0) {
             troopNoBlue = rand() % 5;
         }
-
-//        cout << "generated an index" << endl;
     }
     else {
         cout << "Blue Team is defeated. Red team wins!" << endl;
@@ -379,7 +385,7 @@ int main() {
     }
 
     if (hasHealth(gameMap, redPos)) {
-        while (gameMap[redPos][troopNoRed]->getHealth() <= 0) {
+        while (gameMap[redPos][troopNoRed] != nullptr && gameMap[redPos][troopNoRed]->getHealth() <= 0) {
             troopNoRed = rand() % 5;
         }
     }
@@ -387,8 +393,6 @@ int main() {
         cout << "Red Team is defeated. Blue team wins!" << endl;
         return 0;
     }
-
-    
 
     while (shouldGameContinue(gameMap)) {
         if (teamTurn) {
@@ -844,8 +848,6 @@ int main() {
             while (gameMap[bluePos][troopNoBlue] != nullptr && gameMap[bluePos][troopNoBlue]->getHealth() <= 0) {
                 troopNoBlue = rand() % 5;
             }
-
-            cout << gameMap[bluePos][troopNoBlue]->getName() << "Will fight for blue team next" << endl;
         }
         else {
             cout << "Blue Team is defeated. Red team wins!" << endl;
@@ -856,8 +858,6 @@ int main() {
             while (gameMap[redPos][troopNoRed] != nullptr && gameMap[redPos][troopNoRed]->getHealth() <= 0) {
                 troopNoRed = rand() % 5;
             }
-
-            cout << gameMap[bluePos][troopNoBlue]->getName() << "Will fight for red team next" << endl;
         }
         else {
             cout << "Red Team is defeated. Blue team wins!" << endl;
