@@ -24,19 +24,17 @@ void setBlueArmy(InfantryFactory &blueInfantryFactory, BoatmanFactory &blueBoatm
     string unitType = "";
 
     while ((unitType != "infantry") && (unitType != "boatman") && (unitType != "shieldbearer")) {
-        //TODO: this ism't working. There is no tolerance
-        for (char& c: unitType) {
-            c = tolower(c);
-        }
 
         cout << "Choose a type of unit to add:\t(Infantry | ShieldBearer | Boatman)" << endl;
 
         cin >> unitType;
         cout << unitType << endl;
 
+        for (char& c: unitType) {
+            c = tolower(c);
+        }
 
-
-        if ((unitType != "infantry") || (unitType != "boatman") || (unitType != "shieldbearer")) {
+        if ((unitType != "infantry") && (unitType != "boatman") && (unitType != "shieldbearer")) {
             cout << "Please insert one of the following unit names" << endl;
         }
     }
@@ -77,6 +75,10 @@ void setRedArmy(InfantryFactory &redInfantryFactory, BoatmanFactory &redBoatmanF
 
         for (char& c: unitType) {
             c = tolower(c);
+        }
+
+        if ((unitType != "infantry") && (unitType != "boatman") && (unitType != "shieldbearer")) {
+            cout << "Please insert one of the following unit names" << endl;
         }
     }
 
