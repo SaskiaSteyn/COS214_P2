@@ -189,12 +189,12 @@ bool inRange(Soldiers*** gameMap, int myPos) {
 }
 
 string getAction1(Soldiers*** gameMap, int myPos) {
-    cout << "In the getAction function" << endl;
+//    cout << "In the getAction function" << endl;
     cout << "Action 1:" << endl;
 
     string action = "";
 
-    while (action != "attack" || action != "move" || action != "rest") {
+    while (action != "attack" && action != "move" && action != "rest") {
         if (inRange(gameMap, myPos)) {
             cout << "Choose an action:\t(Attack | Move | Rest)" << endl;
 
@@ -218,7 +218,7 @@ string getAction2(Soldiers*** gameMap, int myPos, string prevMove) {
     cout << "Action 2:" << endl;
     string action = "";
 
-    while (action != "attack" || action != "move" || action != "rest") {
+    while (action != "attack" && action != "move" && action != "rest") {
         if (prevMove == "rest") {
             return "skip";
         }
@@ -251,34 +251,7 @@ bool hasHealth(Soldiers***gameMap, int teamPos) {
     return false;
 }
 
-void generateMap(Soldiers*** gameMap, Soldiers** blueArmy) {
-
-//    const string RESET = "\033[0m";
-//    const string RED = "\033[31m";
-//    const string GREEN = "\033[32m";
-//    const string YELLOW = "\033[33m";
-//    const string BLUE = "\033[34m";
-//    const string MAGENTA = "\033[35m";
-//    const string CYAN = "\033[36m";
-//    cout << "\033[33m" << "=================" << "\033[0m" << endl;
-
-//    cout << YELLOW << "| " << RESET;
-//
-//    for (int i = 0; i < 5; i++) {
-//        if (gameMap[i] == nullptr) {
-//            cout << "  ";
-//        }
-//        else if (gameMap[i] == *blueArmy){
-//            cout << " " << BLUE << "X" << RESET;
-//        }
-//        else {
-//            cout << " " << RED << "X" << RESET;
-//        }
-//    }
-//
-//    cout << YELLOW << " |" << RESET << endl;
-//
-//    cout << YELLOW << "=================" << RESET << endl;
+void generateMap(Soldiers*** gameMap, int bluePos, int redPos) {
 
     cout << endl << "================" << endl;
 
@@ -288,10 +261,10 @@ void generateMap(Soldiers*** gameMap, Soldiers** blueArmy) {
         if (gameMap[i] == nullptr) {
             cout << "  ";
         }
-        else if (gameMap[i] == blueArmy){
+        else if (i == bluePos){
             cout << " " << "B ";
         }
-        else {
+        else if (i == redPos) {
             cout << " " << "R ";
         }
     }
@@ -376,7 +349,6 @@ int main() {
 //        }
 //    }
 
-    generateMap(gameMap, blueArmy);
 
     // Start game
 
@@ -387,16 +359,24 @@ int main() {
     int troopNoBlue = rand() % 5;
     int troopNoRed = rand() % 5;
 
+    generateMap(gameMap, bluePos, redPos);
+
     // Randomly chooses a unit that is alive to fight
     //TODO:May need to change the data structure of gameMap or blueArmy and redArmy. Infinite loop here
+
+//    for (int i = 0; i < 5; i++) {
+//        cout << gameMap[bluePos][i] << endl;
+//    }
+
+
     if (hasHealth(gameMap, bluePos)) {
-        cout << "generating an index" << endl;
+//        cout << "generating an index" << endl;
 
         while (gameMap[bluePos][troopNoBlue]->getHealth() <= 0) {
             troopNoBlue = rand() % 5;
         }
 
-        cout << "generated an index" << endl;
+//        cout << "generated an index" << endl;
     }
     else {
         cout << "Blue Team is defeated. Red team wins!" << endl;
@@ -404,7 +384,7 @@ int main() {
     }
 
     if (hasHealth(gameMap, redPos)) {
-        while (gameMap[redPos][troopNoBlue]->getHealth() <= 0) {
+        while (gameMap[redPos][troopNoRed]->getHealth() <= 0) {
             troopNoRed = rand() % 5;
         }
     }
@@ -416,11 +396,19 @@ int main() {
     while (shouldGameContinue(gameMap)) {
         if (teamTurn) {
 
+            cout << "----------------" << endl;
+            cout << "Blue Team's Turn" << endl;
+            cout << "----------------" << endl;
+
             // Action 1
             //TODO:Output the map here
+            generateMap(gameMap, bluePos, redPos);
 
+//            cout << "Playing action now" << endl;
 
             string action1 = getAction1(gameMap, bluePos);
+
+//            cout << "Played action 1" << endl;
 
             if (action1 == "rest") {
                 if (gameMap[bluePos][troopNoBlue]->getName() == "Hoplite") {
@@ -477,6 +465,7 @@ int main() {
 
             // Action 2
             //TODO:Output the map here
+            generateMap(gameMap, bluePos, redPos);
 
             string action2 = getAction2(gameMap, bluePos, action1);
 
@@ -534,8 +523,13 @@ int main() {
         else {
             // Red Team
 
+            cout << "----------------" << endl;
+            cout << "Red Team's Turn" << endl;
+            cout << "----------------" << endl;
+
             // Action 1
             //TODO:Output the map here
+            generateMap(gameMap, bluePos, redPos);
 
             string action1 = getAction1(gameMap, redPos);
 
@@ -594,6 +588,7 @@ int main() {
 
             // Action 2
             //TODO:Output the map here
+            generateMap(gameMap, bluePos, redPos);
 
             string action2 = getAction2(gameMap, redPos, action1);
 
@@ -652,9 +647,11 @@ int main() {
         teamTurn = !teamTurn;
 
         if (hasHealth(gameMap, bluePos)) {
-            while (gameMap[bluePos][troopNoBlue]->getHealth() <= 0) {
+            while (gameMap[bluePos][troopNoBlue] != nullptr && gameMap[bluePos][troopNoBlue]->getHealth() <= 0) {
                 troopNoBlue = rand() % 5;
             }
+
+            cout << gameMap[bluePos][troopNoBlue]->getName() << "Will fight for blue team next" << endl;
         }
         else {
             cout << "Blue Team is defeated. Red team wins!" << endl;
@@ -662,9 +659,11 @@ int main() {
         }
 
         if (hasHealth(gameMap, redPos)) {
-            while (gameMap[redPos][troopNoBlue]->getHealth() <= 0) {
+            while (gameMap[redPos][troopNoRed] != nullptr && gameMap[redPos][troopNoRed]->getHealth() <= 0) {
                 troopNoRed = rand() % 5;
             }
+
+            cout << gameMap[bluePos][troopNoBlue]->getName() << "Will fight for red team next" << endl;
         }
         else {
             cout << "Red Team is defeated. Blue team wins!" << endl;
